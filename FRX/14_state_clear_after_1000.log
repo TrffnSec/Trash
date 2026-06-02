@@ -1,0 +1,11 @@
+No files changed, compilation skipped
+
+Ran 1 test for src/test/TwammGasGrowthPoC.t.sol:TwammGasGrowthPoC
+[PASS] test_Diagnostic_TWAMM_stateClearsAfterSuccessfulExecution() (gas: 303686549)
+Logs:
+  firstExecuteGas: 38548647
+  secondSyncGasAfterCatchup: 17427
+
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 146.95ms (144.64ms CPU time)
+
+Ran 1 test suite in 148.13ms (146.95ms CPU time): 1 tests passed, 0 failed, 0 skipped (1 total tests)

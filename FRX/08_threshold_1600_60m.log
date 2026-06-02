@@ -1,0 +1,12 @@
+No files changed, compilation skipped
+
+Ran 1 test for src/test/TwammGasGrowthPoC.t.sol:TwammGasGrowthPoC
+[PASS] test_Diagnostic_TWAMM_singleThreshold_1600_60m() (gas: 486946364)
+Logs:
+  uniqueExpiryOrders: 1600
+  totalTokenIn: 5441
+  sync60mOk: 0
+
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 237.92ms (235.49ms CPU time)
+
+Ran 1 test suite in 239.76ms (237.92ms CPU time): 1 tests passed, 0 failed, 0 skipped (1 total tests)
