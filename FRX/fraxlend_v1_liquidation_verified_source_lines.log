@@ -1,0 +1,26 @@
+src/test/v1_verified/src__contracts__FraxlendPairCore.sol:877:    /// @param _collateralForLiquidator The amount of Collateral Token transferred to the liquidator
+src/test/v1_verified/src__contracts__FraxlendPairCore.sol:879:    /// @param _sharesToAdjust The number of Borrow Shares that were adjusted on liabilities and assets (a writeoff)
+src/test/v1_verified/src__contracts__FraxlendPairCore.sol:882:        uint256 _collateralForLiquidator,
+src/test/v1_verified/src__contracts__FraxlendPairCore.sol:885:        uint256 _sharesToAdjust,
+src/test/v1_verified/src__contracts__FraxlendPairCore.sol:886:        uint256 _amountToAdjust
+src/test/v1_verified/src__contracts__FraxlendPairCore.sol:894:    /// @return _collateralForLiquidator The amount of Collateral Token transferred to the liquidator
+src/test/v1_verified/src__contracts__FraxlendPairCore.sol:895:    function liquidate(
+src/test/v1_verified/src__contracts__FraxlendPairCore.sol:899:    ) external whenNotPaused nonReentrant approvedLender(msg.sender) returns (uint256 _collateralForLiquidator) {
+src/test/v1_verified/src__contracts__FraxlendPairCore.sol:915:        int256 _leftoverCollateral;
+src/test/v1_verified/src__contracts__FraxlendPairCore.sol:929:            _leftoverCollateral = (_userCollateralBalance.toInt256() - _optimisticCollateralForLiquidator.toInt256());
+src/test/v1_verified/src__contracts__FraxlendPairCore.sol:933:            _collateralForLiquidator = _leftoverCollateral <= 0
+src/test/v1_verified/src__contracts__FraxlendPairCore.sol:941:        uint128 _sharesToAdjust;
+src/test/v1_verified/src__contracts__FraxlendPairCore.sol:943:            uint128 _amountToAdjust;
+src/test/v1_verified/src__contracts__FraxlendPairCore.sol:944:            if (_leftoverCollateral <= 0) {
+src/test/v1_verified/src__contracts__FraxlendPairCore.sol:946:                _sharesToAdjust = _borrowerShares - _sharesToLiquidate;
+src/test/v1_verified/src__contracts__FraxlendPairCore.sol:947:                if (_sharesToAdjust > 0) {
+src/test/v1_verified/src__contracts__FraxlendPairCore.sol:949:                    _amountToAdjust = (_totalBorrow.toAmount(_sharesToAdjust, false)).toUint128();
+src/test/v1_verified/src__contracts__FraxlendPairCore.sol:952:                    _totalBorrow.amount -= _amountToAdjust;
+src/test/v1_verified/src__contracts__FraxlendPairCore.sol:955:                    totalAsset.amount -= _amountToAdjust;
+src/test/v1_verified/src__contracts__FraxlendPairCore.sol:960:                _collateralForLiquidator,
+src/test/v1_verified/src__contracts__FraxlendPairCore.sol:963:                _sharesToAdjust,
+src/test/v1_verified/src__contracts__FraxlendPairCore.sol:964:                _amountToAdjust
+src/test/v1_verified/src__contracts__FraxlendPairCore.sol:973:            _sharesToLiquidate + _sharesToAdjust,
+src/test/v1_verified/src__contracts__FraxlendPairCore.sol:977:        // NOTE: reverts if _collateralForLiquidator > userCollateralBalance
+src/test/v1_verified/src__contracts__FraxlendPairCore.sol:979:        // NOTE: reverts if _collateralForLiquidator > userCollateralBalance
+src/test/v1_verified/src__contracts__FraxlendPairCore.sol:980:        _removeCollateral(_collateralForLiquidator, msg.sender, _borrower);
