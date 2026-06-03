@@ -1,0 +1,14 @@
+=== V1 access/pause/deposit/borrow controls ===
+--- borrowLimit()(uint256)
+--- depositLimit()(uint256)
+--- isBorrowPaused()(bool)
+--- isDepositPaused()(bool)
+--- isWithdrawPaused()(bool)
+--- isRepayPaused()(bool)
+--- isLiquidatePaused()(bool)
+--- borrowerWhitelistActive()(bool)
+false
+--- lenderWhitelistActive()(bool)
+false
+--- paused()(bool)
+false

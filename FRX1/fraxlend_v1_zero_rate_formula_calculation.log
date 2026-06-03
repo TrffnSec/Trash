@@ -1,0 +1,12 @@
+src/test/v1_verified/src__contracts__FraxlendPairConstants.sol:38:    uint256 internal constant EXCHANGE_PRECISION = 1e18;
+src/test/v1_verified/src__contracts__FraxlendPairCore.sol:311:        uint256 _ltv = (((_borrowerAmount * _exchangeRate) / EXCHANGE_PRECISION) * LTV_PRECISION) / _collateralAmount;
+src/test/v1_verified/src__contracts__FraxlendPairCore.sol:920:                _exchangeRate) / EXCHANGE_PRECISION);
+oracle=0x27942aFe4EcB7F9945168094e0749CAC749aC97B
+normalization=100000000000000000000
+answer=2151828427563952484710
+EXCHANGE_PRECISION 1000000000000000000
+START_PRICE 1000000000000000000000000000000000000
+oracleAnswer 2151828427563952484710
+oracleNormalization 100000000000000000000
+price_after_divide 464721065671617
+computed_exchange_rate 0

@@ -1,0 +1,72 @@
+895:    function liquidate(
+    event Liquidate(
+        address indexed _borrower,
+        uint256 _collateralForLiquidator,
+        uint256 _sharesToLiquidate,
+        uint256 _amountLiquidatorToRepay,
+        uint256 _sharesToAdjust,
+        uint256 _amountToAdjust
+    );
+
+    /// @notice The ```liquidate``` function allows a third party to repay a borrower's debt if they have become insolvent
+    /// @dev Caller must invoke ```ERC20.approve``` on the Asset Token contract prior to calling ```Liquidate()```
+    /// @param _sharesToLiquidate The number of Borrow Shares repaid by the liquidator
+    /// @param _deadline The timestamp after which tx will revert
+    /// @param _borrower The account for which the repayment is credited and from whom collateral will be taken
+    /// @return _collateralForLiquidator The amount of Collateral Token transferred to the liquidator
+    function liquidate(
+        uint128 _sharesToLiquidate,
+        uint256 _deadline,
+        address _borrower
+    ) external whenNotPaused nonReentrant approvedLender(msg.sender) returns (uint256 _collateralForLiquidator) {
+        if (block.timestamp > _deadline) revert PastDeadline(block.timestamp, _deadline);
+
+        _addInterest();
+        uint256 _exchangeRate = _updateExchangeRate();
+
+        if (_isSolvent(_borrower, _exchangeRate)) {
+            revert BorrowerSolvent();
+        }
+
+        // Read from state
+        VaultAccount memory _totalBorrow = totalBorrow;
+        uint256 _userCollateralBalance = userCollateralBalance[_borrower];
+        uint128 _borrowerShares = userBorrowShares[_borrower].toUint128();
+
+        // Prevent stack-too-deep
+        int256 _leftoverCollateral;
+        {
+            // Checks & Calculations
+            // Determine the liquidation amount in collateral units (i.e. how much debt is liquidator going to repay)
+            uint256 _liquidationAmountInCollateralUnits = ((_totalBorrow.toAmount(_sharesToLiquidate, false) *
+                _exchangeRate) / EXCHANGE_PRECISION);
+
+            // We first optimistically calculate the amount of collateral to give the liquidator based on the higher clean liquidation fee
+            // This fee only applies if the liquidator does a full liquidation
+            uint256 _optimisticCollateralForLiquidator = (_liquidationAmountInCollateralUnits *
+                (LIQ_PRECISION + cleanLiquidationFee)) / LIQ_PRECISION;
+
+            // Because interest accrues every block, _liquidationAmountInCollateralUnits from a few lines up is an ever increasing value
+            // This means that leftoverCollateral can occasionally go negative by a few hundred wei (cleanLiqFee premium covers this for liquidator)
+            _leftoverCollateral = (_userCollateralBalance.toInt256() - _optimisticCollateralForLiquidator.toInt256());
+
+            // If cleanLiquidation fee results in no leftover collateral, give liquidator all the collateral
+            // This will only be true when there liquidator is cleaning out the position
+            _collateralForLiquidator = _leftoverCollateral <= 0
+                ? _userCollateralBalance
+                : (_liquidationAmountInCollateralUnits * (LIQ_PRECISION + dirtyLiquidationFee)) / LIQ_PRECISION;
+        }
+        // Calculated here for use during repayment, grouped with other calcs before effects start
+        uint128 _amountLiquidatorToRepay = (_totalBorrow.toAmount(_sharesToLiquidate, true)).toUint128();
+
+        // Determine if and how much debt to adjust
+        uint128 _sharesToAdjust;
+        {
+            uint128 _amountToAdjust;
+            if (_leftoverCollateral <= 0) {
+                // Determine if we need to adjust any shares
+                _sharesToAdjust = _borrowerShares - _sharesToLiquidate;
+                if (_sharesToAdjust > 0) {
+                    // Write off bad debt
+                    _amountToAdjust = (_totalBorrow.toAmount(_sharesToAdjust, false)).toUint128();
+

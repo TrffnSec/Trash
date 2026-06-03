@@ -1,0 +1,30 @@
+    function _isSolvent(address _borrower, uint256 _exchangeRate) internal view returns (bool) {
+        if (maxLTV == 0) return true;
+        uint256 _borrowerAmount = totalBorrow.toAmount(userBorrowShares[_borrower], true);
+        if (_borrowerAmount == 0) return true;
+        uint256 _collateralAmount = userCollateralBalance[_borrower];
+        if (_collateralAmount == 0) return false;
+
+        uint256 _ltv = (((_borrowerAmount * _exchangeRate) / EXCHANGE_PRECISION) * LTV_PRECISION) / _collateralAmount;
+        return _ltv <= maxLTV;
+    }
+
+    /// @notice The ```_isPastMaturity``` function determines if the current block timestamp is past the maturityDate date
+    /// @return Whether or not the debt is past maturity
+    function _isPastMaturity() internal view returns (bool) {
+        return maturityDate != 0 && block.timestamp > maturityDate;
+    }
+
+    // ============================================================================================
+    // Modifiers
+    // ============================================================================================
+
+    /// @notice Checks for solvency AFTER executing contract code
+    /// @param _borrower The borrower whose solvency we will check
+    modifier isSolvent(address _borrower) {
+        _;
+        if (!_isSolvent(_borrower, exchangeRateInfo.exchangeRate)) {
+            revert Insolvent(
+                totalBorrow.toAmount(userBorrowShares[_borrower], true),
+                userCollateralBalance[_borrower],
+                exchangeRateInfo.exchangeRate

