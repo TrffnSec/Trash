@@ -1,0 +1,31 @@
+    function _updateExchangeRate() internal returns (uint256 _exchangeRate) {
+        ExchangeRateInfo memory _exchangeRateInfo = exchangeRateInfo;
+        if (_exchangeRateInfo.lastTimestamp == block.timestamp) {
+            return _exchangeRate = _exchangeRateInfo.exchangeRate;
+        }
+
+        uint256 _price = uint256(1e36);
+        if (oracleMultiply != address(0)) {
+            (, int256 _answer, , , ) = AggregatorV3Interface(oracleMultiply).latestRoundData();
+            if (_answer <= 0) {
+                revert OracleLTEZero(oracleMultiply);
+            }
+            _price = _price * uint256(_answer);
+        }
+
+        if (oracleDivide != address(0)) {
+            (, int256 _answer, , , ) = AggregatorV3Interface(oracleDivide).latestRoundData();
+            if (_answer <= 0) {
+                revert OracleLTEZero(oracleDivide);
+            }
+            _price = _price / uint256(_answer);
+        }
+
+        _exchangeRate = _price / oracleNormalization;
+
+        // write to storage, if no overflow
+        if (_exchangeRate > type(uint224).max) revert PriceTooLarge();
+        _exchangeRateInfo.exchangeRate = uint224(_exchangeRate);
+        _exchangeRateInfo.lastTimestamp = uint32(block.timestamp);
+        exchangeRateInfo = _exchangeRateInfo;
+        emit UpdateExchangeRate(_exchangeRate);

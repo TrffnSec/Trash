@@ -1,0 +1,96 @@
+
+==============================
+PAIR 0x32467a5fc2d72D21E8DCe990906547A2b012f382
+==============================
+"FraxlendV1 - Wrapped BTC/Frax - Variable Time-Weighted Interest Rate - 1"
+asset=0x853d955aCEf822Db058eb8505911ED77F175b99e
+collateral=0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599
+oracleMultiply=0x0000000000000000000000000000000000000000
+oracleDivide=0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c
+oracleNormalization=100000000000000000000 [1e20]
+exchangeRateInfo=1779977519 [1.779e9]
+1376
+
+==============================
+PAIR 0x794F6B13FBd7EB7ef10d1ED205c9a416910207Ff
+==============================
+"FraxlendV1 - Wrapped Ether/Frax - Variable Time-Weighted Interest Rate - 2"
+asset=0x853d955aCEf822Db058eb8505911ED77F175b99e
+collateral=0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2
+oracleMultiply=0x0000000000000000000000000000000000000000
+oracleDivide=0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419
+oracleNormalization=10000000000 [1e10]
+exchangeRateInfo=1772626151 [1.772e9]
+486007405826865 [4.86e14]
+
+==============================
+PAIR 0xc4d57603D47FB842EC11A5332748f9F96d44cbEB
+==============================
+"FraxlendV1 - Curve DAO Token/Frax - Variable Time-Weighted Interest Rate - 3"
+asset=0x853d955aCEf822Db058eb8505911ED77F175b99e
+collateral=0xD533a949740bb3306d119CC777fa900bA034cd52
+oracleMultiply=0x0000000000000000000000000000000000000000
+oracleDivide=0xCd627aA160A6fA45Eb793D19Ef54f5062F20f33f
+oracleNormalization=10000000000 [1e10]
+exchangeRateInfo=1665163139 [1.665e9]
+1126670543990676756 [1.126e18]
+
+==============================
+PAIR 0xa1D100a5bf6BFd2736837c97248853D989a9ED84
+==============================
+"FraxlendV1 - Convex Token/Frax - Variable Time-Weighted Interest Rate - 4"
+asset=0x853d955aCEf822Db058eb8505911ED77F175b99e
+collateral=0x4e3FBD56CD56c3e72c1403e103b45Db9da5B9D2B
+oracleMultiply=0x0000000000000000000000000000000000000000
+oracleDivide=0xd962fC30A72A84cE50161031391756Bf2876Af5D
+oracleNormalization=10000000000 [1e10]
+exchangeRateInfo=1780152731 [1.78e9]
+636940727824526396 [6.369e17]
+
+==============================
+PAIR 0xDbe88DBAc39263c47629ebbA02b3eF4cf0752A72
+==============================
+"FraxlendV1 - Frax Share/Frax - Variable Time-Weighted Interest Rate - 5"
+asset=0x853d955aCEf822Db058eb8505911ED77F175b99e
+collateral=0x3432B6A60D23Ca0dFCa7761B7ab56459D9C964D0
+oracleMultiply=0x0000000000000000000000000000000000000000
+oracleDivide=0x6Ebc52C8C1089be9eB3945C4350B68B8E4C2233f
+oracleNormalization=10000000000 [1e10]
+exchangeRateInfo=1779849131 [1.779e9]
+2482621648460774577 [2.482e18]
+
+==============================
+PAIR 0x3835a58CA93Cdb5f912519ad366826aC9a752510
+==============================
+"FraxlendV1 - Curve DAO Token/Frax - Variable Time-Weighted Interest Rate - 6"
+asset=0x853d955aCEf822Db058eb8505911ED77F175b99e
+collateral=0xD533a949740bb3306d119CC777fa900bA034cd52
+oracleMultiply=0x0000000000000000000000000000000000000000
+oracleDivide=0xCd627aA160A6fA45Eb793D19Ef54f5062F20f33f
+oracleNormalization=10000000000 [1e10]
+exchangeRateInfo=1778847107 [1.778e9]
+3821097732598816453 [3.821e18]
+
+==============================
+PAIR 0x50E627a1DF8D665524942aD7eC6392b6BA60293a
+==============================
+"FraxlendV1 - Frax Price Index/Frax - Variable Time-Weighted Interest Rate - 7"
+asset=0x853d955aCEf822Db058eb8505911ED77F175b99e
+collateral=0x5Ca135cB8527d76e932f34B5145575F9d8cbE08E
+oracleMultiply=0x0000000000000000000000000000000000000000
+oracleDivide=0xd2516e709a2e9D64F66B4c4009efE4F74F5FA40D
+oracleNormalization=1
+exchangeRateInfo=1675450115 [1.675e9]
+939423364616357393 [9.394e17]
+
+==============================
+PAIR 0xF1b3Cbc51a7483C656af9Aa09F319a3b66aD5e04
+==============================
+"FraxlendV1 - ezETH/Frax - Variable Time-Weighted Interest Rate - 8"
+asset=0x853d955aCEf822Db058eb8505911ED77F175b99e
+collateral=0xaf620E6913Fc52AcF7C5a5e08Bd4Cb8aa64Be211
+oracleMultiply=0x0000000000000000000000000000000000000000
+oracleDivide=0x27942aFe4EcB7F9945168094e0749CAC749aC97B
+oracleNormalization=100000000000000000000 [1e20]
+exchangeRateInfo=1718356787 [1.718e9]
+0
