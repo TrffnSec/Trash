@@ -1,0 +1,47 @@
+Compiling 1 files with Solc 0.8.25
+Solc 0.8.25 finished in 2.61s
+Compiler run successful!
+
+Ran 1 test for src/test/FraxswapTwammUserOpsBeforeRecoveryOnlyPoC.t.sol:FraxswapTwammUserOpsBeforeRecoveryOnlyPoC
+[PASS] test_userFacingOpsOOGBeforeRecovery() (gas: 90039177)
+Logs:
+  paused: 0
+  reserve0: 100505041932678114456
+  reserve1: 106983936568102153668
+  blockTimestampLast: 1679594879
+  lastVirtualOrderTimestamp: 1679594879
+  elapsed intervals: 28076
+  sync before recovery ok: 0
+  mint before recovery ok: 0
+  swap before recovery ok: 0
+
+Traces:
+  [90039177] FraxswapTwammUserOpsBeforeRecoveryOnlyPoC::test_userFacingOpsOOGBeforeRecovery()
+    ├─ [2400] FraxswapPair::newSwapsPaused() [staticcall]
+    │   └─ ← [Return] false
+    ├─ emit log_named_uint(key: "paused", val: 0)
+    ├─ [2470] FraxswapPair::getReserves() [staticcall]
+    │   └─ ← [Return] 100505041932678114456 [1.005e20], 106983936568102153668 [1.069e20], 1679594879 [1.679e9]
+    ├─ emit log_named_uint(key: "reserve0", val: 100505041932678114456 [1.005e20])
+    ├─ emit log_named_uint(key: "reserve1", val: 106983936568102153668 [1.069e20])
+    ├─ emit log_named_uint(key: "blockTimestampLast", val: 1679594879 [1.679e9])
+    ├─ [10879] FraxswapPair::getTwammState() [staticcall]
+    │   └─ ← [Return] 0, 0, 1679594879 [1.679e9], 3600, 0, 31483919550579051809204422509363267601 [3.148e37]
+    ├─ emit log_named_uint(key: "lastVirtualOrderTimestamp", val: 1679594879 [1.679e9])
+    ├─ emit log_named_uint(key: "elapsed intervals", val: 28076 [2.807e4])
+    ├─ [400] FraxswapPair::newSwapsPaused() [staticcall]
+    │   └─ ← [Return] false
+    ├─ [30000000] FraxswapPair::sync()
+    │   └─ ← [OutOfGas] EvmError: OutOfGas
+    ├─ [30000000] FraxswapPair::mint(0x000000000000000000000000000000000000cafE)
+    │   └─ ← [OutOfGas] EvmError: OutOfGas
+    ├─ [30000000] FraxswapPair::swap(1, 0, 0x000000000000000000000000000000000000bEEF, 0x)
+    │   └─ ← [OutOfGas] EvmError: OutOfGas
+    ├─ emit log_named_uint(key: "sync before recovery ok", val: 0)
+    ├─ emit log_named_uint(key: "mint before recovery ok", val: 0)
+    ├─ emit log_named_uint(key: "swap before recovery ok", val: 0)
+    └─ ← [Return]
+
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 914.07s (913.59s CPU time)
+
+Ran 1 test suite in 914.75s (914.07s CPU time): 1 tests passed, 0 failed, 0 skipped (1 total tests)

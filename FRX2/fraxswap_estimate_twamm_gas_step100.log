@@ -1,0 +1,181 @@
+NOW=1780656503
+
+======================================
+PAIR=0x146F7D2f5953346B773dcf3c0B80A247f991610f
+NAME=Fraxswap V1 LINK/FRAX
+======================================
+RESERVES=413 2427 1672194911 [1.672e9] 
+NEXT_ORDER_ID=0
+TWAMM_STATE=0 0 1672194911 [1.672e9] 3600 0 0 
+ESTIMATE sync(): Error: server returned an error response: error code -32003: out of gas: gas required exceeds: 16777216
+ESTIMATE executeVirtualOrders(now): Error: server returned an error response: error code -32003: out of gas: gas required exceeds: 16777216
+
+======================================
+PAIR=0x9F021dbe204B7e32227Dc3249de1b424Bba11d35
+NAME=Fraxswap V1 FXS/OHM
+======================================
+RESERVES=42773145 [4.277e7] 1 1659326839 [1.659e9] 
+NEXT_ORDER_ID=0
+TWAMM_STATE=0 0 1659326839 [1.659e9] 3600 0 0 
+ESTIMATE sync(): Error: server returned an error response: error code -32003: out of gas: gas required exceeds: 16777216
+ESTIMATE executeVirtualOrders(now): Error: server returned an error response: error code -32003: out of gas: gas required exceeds: 16777216
+
+======================================
+PAIR=0xd79886841026a39cFF99321140B3c4D31314782B
+NAME=Fraxswap V2 FPI/FRAX
+======================================
+RESERVES=100505041932678114456 [1.005e20] 106983936568102153668 [1.069e20] 1679594879 [1.679e9] 
+NEXT_ORDER_ID=1
+TWAMM_STATE=0 0 1679594879 [1.679e9] 3600 0 31483919550579051809204422509363267601 [3.148e37] 
+ESTIMATE sync(): Error: server returned an error response: error code -32003: out of gas: gas required exceeds: 16777216
+ESTIMATE executeVirtualOrders(now): Error: server returned an error response: error code -32003: out of gas: gas required exceeds: 16777216
+
+======================================
+PAIR=0x56695c26b3Cdb528815cd22fF7B47510ab821EFd
+NAME=Fraxswap V2 FRAX/FPIS
+======================================
+RESERVES=18916638005186801722434 [1.891e22] 211165861921258700487178 [2.111e23] 1780639271 [1.78e9] 
+NEXT_ORDER_ID=88
+TWAMM_STATE=0 0 1780639271 [1.78e9] 3600 40616413440106061247463970509048857202732 [4.061e40] 222880498048546570300772015061088352870377 [2.228e41] 
+ESTIMATE sync(): 170859
+ESTIMATE executeVirtualOrders(now): 72366
+
+======================================
+PAIR=0x03B59Bd1c8B9F6C265bA0c3421923B93f15036Fa
+NAME=Fraxswap V2 FXS/FRAX
+======================================
+RESERVES=2168403253380773129153067 [2.168e24] 658510500825816237745905 [6.585e23] 1780656107 [1.78e9] 
+NEXT_ORDER_ID=228
+TWAMM_STATE=0 0 1780656107 [1.78e9] 3600 1038584604991299487442861173946194173054930 [1.038e42] 59276962532534883822527545746812815479368 [5.927e40] 
+ESTIMATE sync(): 152655
+ESTIMATE executeVirtualOrders(now): 54088
+
+======================================
+PAIR=0x31351Bf3fba544863FBff44DDC27bA880916A199
+NAME=Fraxswap V2 FRAX/WETH
+======================================
+RESERVES=275711161272478983509273 [2.757e23] 163225467246105551958 [1.632e20] 1780654799 [1.78e9] 
+NEXT_ORDER_ID=26
+TWAMM_STATE=0 0 1780654799 [1.78e9] 3600 67246477293935569361038020799692210071 [6.724e37] 845164548356403816863425951988891837272206 [8.451e41] 
+ESTIMATE sync(): 152522
+ESTIMATE executeVirtualOrders(now): 54088
+
+======================================
+PAIR=0xF14766a7C44EFb7F71441B7114d5Dd295B637175
+NAME=Fraxswap V2 FPI/FPIS
+======================================
+RESERVES=107794025690875464346 [1.077e20] 91341493434966585722 [9.134e19] 1664472995 [1.664e9] 
+NEXT_ORDER_ID=1
+TWAMM_STATE=0 0 1664472995 [1.664e9] 3600 0 33706937599265322498880381749256519895 [3.37e37] 
+ESTIMATE sync(): Error: server returned an error response: error code -32003: out of gas: gas required exceeds: 16777216
+ESTIMATE executeVirtualOrders(now): Error: server returned an error response: error code -32003: out of gas: gas required exceeds: 16777216
+
+======================================
+PAIR=0x3ECfdA4EfF6184cD8563772D6d024cB0Fb9cBf80
+NAME=Fraxswap V2 FXS/FPI
+======================================
+RESERVES=49628598942877262742465 [4.962e22] 13286824386956762470551 [1.328e22] 1780642307 [1.78e9] 
+NEXT_ORDER_ID=0
+TWAMM_STATE=0 0 1780642307 [1.78e9] 3600 0 0 
+ESTIMATE sync(): 170836
+ESTIMATE executeVirtualOrders(now): 72366
+
+======================================
+PAIR=0x7a9Bd205B55cCB1Cc1c5B99FF5Db87a6e7B2C38b
+NAME=Fraxswap V2 FXS/FPIS
+======================================
+RESERVES=3434601714069695253235 [3.434e21] 11828782233469212905855 [1.182e22] 1780652963 [1.78e9] 
+NEXT_ORDER_ID=1
+TWAMM_STATE=0 0 1780652963 [1.78e9] 3600 0 262563973903849426764882000870603906892 [2.625e38] 
+ESTIMATE sync(): 157176
+ESTIMATE executeVirtualOrders(now): 58658
+
+======================================
+PAIR=0x5769071665eb8Db80e7e9226F92336Bb2897DCFA
+NAME=Fraxswap V2 OHM/FRAX
+======================================
+RESERVES=9501144683 [9.501e9] 179905484498384194304 [1.799e20] 1779852011 [1.779e9] 
+NEXT_ORDER_ID=2
+TWAMM_STATE=0 0 1779852011 [1.779e9] 3600 166838553121683809951015155437801967471080205999291 [1.668e50] 0 
+ESTIMATE sync(): 1163615
+ESTIMATE executeVirtualOrders(now): 1064892
+
+======================================
+PAIR=0x5E8c1aD4c3D04f059d5c1A2Ce4593e53be270bca
+NAME=Fraxswap V2 FRAX/ZZ
+======================================
+RESERVES=282285690276727446452 [2.822e20] 2334717812981098202184542 [2.334e24] 1772514071 [1.772e9] 
+NEXT_ORDER_ID=8
+TWAMM_STATE=0 0 1772514071 [1.772e9] 3600 427837559076959630928288594583860686495993017 [4.278e44] 197051114259059989285907508178183726655858 [1.97e41] 
+ESTIMATE sync(): 10422178
+ESTIMATE executeVirtualOrders(now): 10323057
+
+======================================
+PAIR=0x3b596AFb03EBb4E11F2c898D51581830A67C7b7C
+NAME=Fraxswap V2 FVT/FRAX
+======================================
+RESERVES=1451000000000000000000 [1.451e21] 1000000000000000000 [1e18] 1661453192 [1.661e9] 
+NEXT_ORDER_ID=0
+TWAMM_STATE=0 0 1661453192 [1.661e9] 3600 0 0 
+ESTIMATE sync(): Error: server returned an error response: error code -32003: out of gas: gas required exceeds: 16777216
+ESTIMATE executeVirtualOrders(now): Error: server returned an error response: error code -32003: out of gas: gas required exceeds: 16777216
+
+======================================
+PAIR=0xCCB26b5CC4e1Ce29521DA281a0107A6672bfe099
+NAME=Fraxswap V2 FRAX/SDL
+======================================
+RESERVES=22519271162784753911 [2.251e19] 4147072167968807421677 [4.147e21] 1687977599 [1.687e9] 
+NEXT_ORDER_ID=15
+TWAMM_STATE=0 0 1687977599 [1.687e9] 3600 0 616621681016267952411944930883990686821 [6.166e38] 
+ESTIMATE sync(): Error: server returned an error response: error code -32003: out of gas: gas required exceeds: 16777216
+ESTIMATE executeVirtualOrders(now): Error: server returned an error response: error code -32003: out of gas: gas required exceeds: 16777216
+
+======================================
+PAIR=0x832c6f546Bf34A552DeB8773216a93bf6801028c
+NAME=Fraxswap V2 SYN/FRAX
+======================================
+RESERVES=3551170219303824142410 [3.551e21] 165133541192731490950 [1.651e20] 1780608395 [1.78e9] 
+NEXT_ORDER_ID=25
+TWAMM_STATE=0 0 1780608395 [1.78e9] 3600 108431711933255186204946579603198886576991 [1.084e41] 87795960421073250658053055370969241103 [8.779e37] 
+ESTIMATE sync(): 214534
+ESTIMATE executeVirtualOrders(now): 112632
+
+======================================
+PAIR=0x07AF6BB51d6Ad0Cf126E3eD2DeE6EaC34BF094F8
+NAME=Fraxswap V2 IQ/FRAX
+======================================
+RESERVES=1021930491144115366237972840 [1.021e27] 913043373556868893464266 [9.13e23] 1780651535 [1.78e9] 
+NEXT_ORDER_ID=241
+TWAMM_STATE=92832420878947151903984592 [9.283e25] 0 1780651535 [1.78e9] 3600 3039858859473195761056131191242612367971 [3.039e39] 444964400671162085906640139101932321134701 [4.449e41] 
+ESTIMATE sync(): 167704
+ESTIMATE executeVirtualOrders(now): 149763
+
+======================================
+PAIR=0xd943b8CF96Fe3940A73BCf4cEaCBB3f616c2F542
+NAME=Fraxswap V2 FRAX/0x8A421C3A25e8158b9aC815aE1319fBCf83F6bD6c
+======================================
+RESERVES=0 0 0 
+NEXT_ORDER_ID=0
+TWAMM_STATE=0 0 1664843339 [1.664e9] 3600 0 0 
+ESTIMATE sync(): Error: server returned an error response: error code -32003: out of gas: gas required exceeds: 16777216
+ESTIMATE executeVirtualOrders(now): Error: server returned an error response: error code -32003: out of gas: gas required exceeds: 16777216
+
+======================================
+PAIR=0x87CB08364611eD894b137d3f218C1D44834bf273
+NAME=Fraxswap V2 PITCH/FRAX
+======================================
+RESERVES=0 0 0 
+NEXT_ORDER_ID=0
+TWAMM_STATE=0 0 1664843471 [1.664e9] 3600 0 0 
+ESTIMATE sync(): Error: server returned an error response: error code -32003: out of gas: gas required exceeds: 16777216
+ESTIMATE executeVirtualOrders(now): Error: server returned an error response: error code -32003: out of gas: gas required exceeds: 16777216
+
+======================================
+PAIR=0x2bac101F9769AEfF63c63EFfB4189152e833649F
+NAME=Fraxswap V2 pitchFXS/FRAX
+======================================
+RESERVES=81922979741051882546134 [8.192e22] 23088980621452248018826 [2.308e22] 1779241547 [1.779e9] 
+NEXT_ORDER_ID=10
+TWAMM_STATE=0 0 1779241547 [1.779e9] 3600 25462789900218089024774934988630965817304 [2.546e40] 3234473467750397486538639723268939081300 [3.234e39] 
+ESTIMATE sync(): 1936092
+ESTIMATE executeVirtualOrders(now): 1837163

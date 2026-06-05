@@ -1,0 +1,368 @@
+Compiling 1 files with Solc 0.8.25
+Solc 0.8.25 finished in 2.82s
+Compiler run successful!
+
+Ran 2 tests for src/test/FraxswapTwammChunkedRecoveryPoC.t.sol:FraxswapTwammChunkedRecoveryPoC
+[PASS] test_chunkedRecoveryFeasibility() (gas: 43995425)
+Logs:
+  initial lastVirtualOrderTimestamp: 1679594879
+  now: 1780659323
+  total stale intervals: 28073
+  chunk intervals ok: 24
+  chunk gas used: 132968
+  after chunk lastVirtualOrderTimestamp: 1679681279
+  chunk intervals ok: 168
+  chunk gas used: 781977
+  after chunk lastVirtualOrderTimestamp: 1680199679
+  chunk intervals ok: 720
+  chunk gas used: 3269840
+  after chunk lastVirtualOrderTimestamp: 1682186879
+  chunk intervals ok: 2160
+  chunk gas used: 9759921
+  after chunk lastVirtualOrderTimestamp: 1687370879
+  chunk intervals reverted/OOG: 8760
+
+Traces:
+  [44006625] FraxswapTwammChunkedRecoveryPoC::test_chunkedRecoveryFeasibility()
+    ├─ [2400] FraxswapPair::newSwapsPaused() [staticcall]
+    │   └─ ← [Return] false
+    ├─ [10879] FraxswapPair::getTwammState() [staticcall]
+    │   └─ ← [Return] 0, 0, 1679594879 [1.679e9], 3600, 0, 31483919550579051809204422509363267601 [3.148e37]
+    ├─ emit log_named_uint(key: "initial lastVirtualOrderTimestamp", val: 1679594879 [1.679e9])
+    ├─ emit log_named_uint(key: "now", val: 1780659323 [1.78e9])
+    ├─ emit log_named_uint(key: "total stale intervals", val: 28073 [2.807e4])
+    ├─ [0] VM::snapshotState()
+    │   └─ ← [Return] 0
+    ├─ [879] FraxswapPair::getTwammState() [staticcall]
+    │   └─ ← [Return] 0, 0, 1679594879 [1.679e9], 3600, 0, 31483919550579051809204422509363267601 [3.148e37]
+    ├─ [130605] FraxswapPair::executeVirtualOrders(1679681279 [1.679e9])
+    │   ├─ emit VirtualOrderExecution(blockTimestamp: 1679681279 [1.679e9], blockTimestampElapsed: 86400 [8.64e4], newReserve0: 100505041932678114456 [1.005e20], newReserve1: 106983936568102153668 [1.069e20], newTwammReserve0: 1, newTwammReserve1: 1, token0Bought: 0, token1Bought: 0, token0Sold: 0, token1Sold: 0)
+    │   └─ ← [Stop]
+    ├─ emit log_named_uint(key: "chunk intervals ok", val: 24)
+    ├─ emit log_named_uint(key: "chunk gas used", val: 132968 [1.329e5])
+    ├─ [879] FraxswapPair::getTwammState() [staticcall]
+    │   └─ ← [Return] 0, 0, 1679681279 [1.679e9], 3600, 0, 31483919550579051809204422509363267601 [3.148e37]
+    ├─ emit log_named_uint(key: "after chunk lastVirtualOrderTimestamp", val: 1679681279 [1.679e9])
+    ├─ [0] VM::revertToState(0)
+    │   └─ ← [Return] true
+    ├─ [0] VM::snapshotState()
+    │   └─ ← [Return] 1
+    ├─ [879] FraxswapPair::getTwammState() [staticcall]
+    │   └─ ← [Return] 0, 0, 1679594879 [1.679e9], 3600, 0, 31483919550579051809204422509363267601 [3.148e37]
+    ├─ [779613] FraxswapPair::executeVirtualOrders(1680199679 [1.68e9])
+    │   ├─ emit VirtualOrderExecution(blockTimestamp: 1680199679 [1.68e9], blockTimestampElapsed: 604800 [6.048e5], newReserve0: 100505041932678114456 [1.005e20], newReserve1: 106983936568102153668 [1.069e20], newTwammReserve0: 1, newTwammReserve1: 1, token0Bought: 0, token1Bought: 0, token0Sold: 0, token1Sold: 0)
+    │   └─ ← [Stop]
+    ├─ emit log_named_uint(key: "chunk intervals ok", val: 168)
+    ├─ emit log_named_uint(key: "chunk gas used", val: 781977 [7.819e5])
+    ├─ [879] FraxswapPair::getTwammState() [staticcall]
+    │   └─ ← [Return] 0, 0, 1680199679 [1.68e9], 3600, 0, 31483919550579051809204422509363267601 [3.148e37]
+    ├─ emit log_named_uint(key: "after chunk lastVirtualOrderTimestamp", val: 1680199679 [1.68e9])
+    ├─ [0] VM::revertToState(1)
+    │   └─ ← [Return] true
+    ├─ [0] VM::snapshotState()
+    │   └─ ← [Return] 2
+    ├─ [879] FraxswapPair::getTwammState() [staticcall]
+    │   └─ ← [Return] 0, 0, 1679594879 [1.679e9], 3600, 0, 31483919550579051809204422509363267601 [3.148e37]
+    ├─ [3267477] FraxswapPair::executeVirtualOrders(1682186879 [1.682e9])
+    │   ├─ emit VirtualOrderExecution(blockTimestamp: 1682186879 [1.682e9], blockTimestampElapsed: 2592000 [2.592e6], newReserve0: 100505041932678114456 [1.005e20], newReserve1: 106983936568102153668 [1.069e20], newTwammReserve0: 1, newTwammReserve1: 1, token0Bought: 0, token1Bought: 0, token0Sold: 0, token1Sold: 0)
+    │   └─ ← [Stop]
+    ├─ emit log_named_uint(key: "chunk intervals ok", val: 720)
+    ├─ emit log_named_uint(key: "chunk gas used", val: 3269840 [3.269e6])
+    ├─ [879] FraxswapPair::getTwammState() [staticcall]
+    │   └─ ← [Return] 0, 0, 1682186879 [1.682e9], 3600, 0, 31483919550579051809204422509363267601 [3.148e37]
+    ├─ emit log_named_uint(key: "after chunk lastVirtualOrderTimestamp", val: 1682186879 [1.682e9])
+    ├─ [0] VM::revertToState(2)
+    │   └─ ← [Return] true
+    ├─ [0] VM::snapshotState()
+    │   └─ ← [Return] 3
+    ├─ [879] FraxswapPair::getTwammState() [staticcall]
+    │   └─ ← [Return] 0, 0, 1679594879 [1.679e9], 3600, 0, 31483919550579051809204422509363267601 [3.148e37]
+    ├─ [9757557] FraxswapPair::executeVirtualOrders(1687370879 [1.687e9])
+    │   ├─ emit VirtualOrderExecution(blockTimestamp: 1687370879 [1.687e9], blockTimestampElapsed: 7776000 [7.776e6], newReserve0: 100505041932678114456 [1.005e20], newReserve1: 106983936568102153668 [1.069e20], newTwammReserve0: 1, newTwammReserve1: 1, token0Bought: 0, token1Bought: 0, token0Sold: 0, token1Sold: 0)
+    │   └─ ← [Stop]
+    ├─ emit log_named_uint(key: "chunk intervals ok", val: 2160)
+    ├─ emit log_named_uint(key: "chunk gas used", val: 9759921 [9.759e6])
+    ├─ [879] FraxswapPair::getTwammState() [staticcall]
+    │   └─ ← [Return] 0, 0, 1687370879 [1.687e9], 3600, 0, 31483919550579051809204422509363267601 [3.148e37]
+    ├─ emit log_named_uint(key: "after chunk lastVirtualOrderTimestamp", val: 1687370879 [1.687e9])
+    ├─ [0] VM::revertToState(3)
+    │   └─ ← [Return] true
+    ├─ [0] VM::snapshotState()
+    │   └─ ← [Return] 4
+    ├─ [879] FraxswapPair::getTwammState() [staticcall]
+    │   └─ ← [Return] 0, 0, 1679594879 [1.679e9], 3600, 0, 31483919550579051809204422509363267601 [3.148e37]
+    ├─ [30000000] FraxswapPair::executeVirtualOrders(1711130879 [1.711e9])
+    │   └─ ← [OutOfGas] EvmError: OutOfGas
+    ├─ emit log_named_uint(key: "chunk intervals reverted/OOG", val: 8760)
+    ├─ [0] VM::revertToState(4)
+    │   └─ ← [Return] true
+    └─ ← [Stop]
+
+[PASS] test_fullRecoveryByRepeatedChunks_720Intervals() (gas: 127136103)
+Logs:
+  recovery call: 1
+  target: 1682186879
+  gas used: 3269917
+  new last: 1682186879
+  recovery call: 2
+  target: 1684778879
+  gas used: 3257111
+  new last: 1684778879
+  recovery call: 3
+  target: 1687370879
+  gas used: 3257111
+  new last: 1687370879
+  recovery call: 4
+  target: 1689962879
+  gas used: 3257111
+  new last: 1689962879
+  recovery call: 5
+  target: 1692554879
+  gas used: 3257111
+  new last: 1692554879
+  recovery call: 39
+  target: 1780659323
+  gas used: 3225570
+  new last: 1780659323
+  total recovery calls: 39
+  total recovery gas: 127008821
+  sync after chunked recovery ok: 1
+
+Traces:
+  [127248103] FraxswapTwammChunkedRecoveryPoC::test_fullRecoveryByRepeatedChunks_720Intervals()
+    ├─ [10879] FraxswapPair::getTwammState() [staticcall]
+    │   └─ ← [Return] 0, 0, 1679594879 [1.679e9], 3600, 0, 31483919550579051809204422509363267601 [3.148e37]
+    ├─ [3269477] FraxswapPair::executeVirtualOrders(1682186879 [1.682e9])
+    │   ├─ emit VirtualOrderExecution(blockTimestamp: 1682186879 [1.682e9], blockTimestampElapsed: 2592000 [2.592e6], newReserve0: 100505041932678114456 [1.005e20], newReserve1: 106983936568102153668 [1.069e20], newTwammReserve0: 1, newTwammReserve1: 1, token0Bought: 0, token1Bought: 0, token0Sold: 0, token1Sold: 0)
+    │   └─ ← [Stop]
+    ├─ [879] FraxswapPair::getTwammState() [staticcall]
+    │   └─ ← [Return] 0, 0, 1682186879 [1.682e9], 3600, 0, 31483919550579051809204422509363267601 [3.148e37]
+    ├─ emit log_named_uint(key: "recovery call", val: 1)
+    ├─ emit log_named_uint(key: "target", val: 1682186879 [1.682e9])
+    ├─ emit log_named_uint(key: "gas used", val: 3269917 [3.269e6])
+    ├─ emit log_named_uint(key: "new last", val: 1682186879 [1.682e9])
+    ├─ [3256677] FraxswapPair::executeVirtualOrders(1684778879 [1.684e9])
+    │   ├─ emit VirtualOrderExecution(blockTimestamp: 1684778879 [1.684e9], blockTimestampElapsed: 2592000 [2.592e6], newReserve0: 100505041932678114456 [1.005e20], newReserve1: 106983936568102153668 [1.069e20], newTwammReserve0: 1, newTwammReserve1: 1, token0Bought: 0, token1Bought: 0, token0Sold: 0, token1Sold: 0)
+    │   └─ ← [Stop]
+    ├─ [879] FraxswapPair::getTwammState() [staticcall]
+    │   └─ ← [Return] 0, 0, 1684778879 [1.684e9], 3600, 0, 31483919550579051809204422509363267601 [3.148e37]
+    ├─ emit log_named_uint(key: "recovery call", val: 2)
+    ├─ emit log_named_uint(key: "target", val: 1684778879 [1.684e9])
+    ├─ emit log_named_uint(key: "gas used", val: 3257111 [3.257e6])
+    ├─ emit log_named_uint(key: "new last", val: 1684778879 [1.684e9])
+    ├─ [3256677] FraxswapPair::executeVirtualOrders(1687370879 [1.687e9])
+    │   ├─ emit VirtualOrderExecution(blockTimestamp: 1687370879 [1.687e9], blockTimestampElapsed: 2592000 [2.592e6], newReserve0: 100505041932678114456 [1.005e20], newReserve1: 106983936568102153668 [1.069e20], newTwammReserve0: 1, newTwammReserve1: 1, token0Bought: 0, token1Bought: 0, token0Sold: 0, token1Sold: 0)
+    │   └─ ← [Stop]
+    ├─ [879] FraxswapPair::getTwammState() [staticcall]
+    │   └─ ← [Return] 0, 0, 1687370879 [1.687e9], 3600, 0, 31483919550579051809204422509363267601 [3.148e37]
+    ├─ emit log_named_uint(key: "recovery call", val: 3)
+    ├─ emit log_named_uint(key: "target", val: 1687370879 [1.687e9])
+    ├─ emit log_named_uint(key: "gas used", val: 3257111 [3.257e6])
+    ├─ emit log_named_uint(key: "new last", val: 1687370879 [1.687e9])
+    ├─ [3256677] FraxswapPair::executeVirtualOrders(1689962879 [1.689e9])
+    │   ├─ emit VirtualOrderExecution(blockTimestamp: 1689962879 [1.689e9], blockTimestampElapsed: 2592000 [2.592e6], newReserve0: 100505041932678114456 [1.005e20], newReserve1: 106983936568102153668 [1.069e20], newTwammReserve0: 1, newTwammReserve1: 1, token0Bought: 0, token1Bought: 0, token0Sold: 0, token1Sold: 0)
+    │   └─ ← [Stop]
+    ├─ [879] FraxswapPair::getTwammState() [staticcall]
+    │   └─ ← [Return] 0, 0, 1689962879 [1.689e9], 3600, 0, 31483919550579051809204422509363267601 [3.148e37]
+    ├─ emit log_named_uint(key: "recovery call", val: 4)
+    ├─ emit log_named_uint(key: "target", val: 1689962879 [1.689e9])
+    ├─ emit log_named_uint(key: "gas used", val: 3257111 [3.257e6])
+    ├─ emit log_named_uint(key: "new last", val: 1689962879 [1.689e9])
+    ├─ [3256677] FraxswapPair::executeVirtualOrders(1692554879 [1.692e9])
+    │   ├─ emit VirtualOrderExecution(blockTimestamp: 1692554879 [1.692e9], blockTimestampElapsed: 2592000 [2.592e6], newReserve0: 100505041932678114456 [1.005e20], newReserve1: 106983936568102153668 [1.069e20], newTwammReserve0: 1, newTwammReserve1: 1, token0Bought: 0, token1Bought: 0, token0Sold: 0, token1Sold: 0)
+    │   └─ ← [Stop]
+    ├─ [879] FraxswapPair::getTwammState() [staticcall]
+    │   └─ ← [Return] 0, 0, 1692554879 [1.692e9], 3600, 0, 31483919550579051809204422509363267601 [3.148e37]
+    ├─ emit log_named_uint(key: "recovery call", val: 5)
+    ├─ emit log_named_uint(key: "target", val: 1692554879 [1.692e9])
+    ├─ emit log_named_uint(key: "gas used", val: 3257111 [3.257e6])
+    ├─ emit log_named_uint(key: "new last", val: 1692554879 [1.692e9])
+    ├─ [3256677] FraxswapPair::executeVirtualOrders(1695146879 [1.695e9])
+    │   ├─ emit VirtualOrderExecution(blockTimestamp: 1695146879 [1.695e9], blockTimestampElapsed: 2592000 [2.592e6], newReserve0: 100505041932678114456 [1.005e20], newReserve1: 106983936568102153668 [1.069e20], newTwammReserve0: 1, newTwammReserve1: 1, token0Bought: 0, token1Bought: 0, token0Sold: 0, token1Sold: 0)
+    │   └─ ← [Stop]
+    ├─ [879] FraxswapPair::getTwammState() [staticcall]
+    │   └─ ← [Return] 0, 0, 1695146879 [1.695e9], 3600, 0, 31483919550579051809204422509363267601 [3.148e37]
+    ├─ [3256677] FraxswapPair::executeVirtualOrders(1697738879 [1.697e9])
+    │   ├─ emit VirtualOrderExecution(blockTimestamp: 1697738879 [1.697e9], blockTimestampElapsed: 2592000 [2.592e6], newReserve0: 100505041932678114456 [1.005e20], newReserve1: 106983936568102153668 [1.069e20], newTwammReserve0: 1, newTwammReserve1: 1, token0Bought: 0, token1Bought: 0, token0Sold: 0, token1Sold: 0)
+    │   └─ ← [Stop]
+    ├─ [879] FraxswapPair::getTwammState() [staticcall]
+    │   └─ ← [Return] 0, 0, 1697738879 [1.697e9], 3600, 0, 31483919550579051809204422509363267601 [3.148e37]
+    ├─ [3256677] FraxswapPair::executeVirtualOrders(1700330879 [1.7e9])
+    │   ├─ emit VirtualOrderExecution(blockTimestamp: 1700330879 [1.7e9], blockTimestampElapsed: 2592000 [2.592e6], newReserve0: 100505041932678114456 [1.005e20], newReserve1: 106983936568102153668 [1.069e20], newTwammReserve0: 1, newTwammReserve1: 1, token0Bought: 0, token1Bought: 0, token0Sold: 0, token1Sold: 0)
+    │   └─ ← [Stop]
+    ├─ [879] FraxswapPair::getTwammState() [staticcall]
+    │   └─ ← [Return] 0, 0, 1700330879 [1.7e9], 3600, 0, 31483919550579051809204422509363267601 [3.148e37]
+    ├─ [3256677] FraxswapPair::executeVirtualOrders(1702922879 [1.702e9])
+    │   ├─ emit VirtualOrderExecution(blockTimestamp: 1702922879 [1.702e9], blockTimestampElapsed: 2592000 [2.592e6], newReserve0: 100505041932678114456 [1.005e20], newReserve1: 106983936568102153668 [1.069e20], newTwammReserve0: 1, newTwammReserve1: 1, token0Bought: 0, token1Bought: 0, token0Sold: 0, token1Sold: 0)
+    │   └─ ← [Stop]
+    ├─ [879] FraxswapPair::getTwammState() [staticcall]
+    │   └─ ← [Return] 0, 0, 1702922879 [1.702e9], 3600, 0, 31483919550579051809204422509363267601 [3.148e37]
+    ├─ [3256677] FraxswapPair::executeVirtualOrders(1705514879 [1.705e9])
+    │   ├─ emit VirtualOrderExecution(blockTimestamp: 1705514879 [1.705e9], blockTimestampElapsed: 2592000 [2.592e6], newReserve0: 100505041932678114456 [1.005e20], newReserve1: 106983936568102153668 [1.069e20], newTwammReserve0: 1, newTwammReserve1: 1, token0Bought: 0, token1Bought: 0, token0Sold: 0, token1Sold: 0)
+    │   └─ ← [Stop]
+    ├─ [879] FraxswapPair::getTwammState() [staticcall]
+    │   └─ ← [Return] 0, 0, 1705514879 [1.705e9], 3600, 0, 31483919550579051809204422509363267601 [3.148e37]
+    ├─ [3256677] FraxswapPair::executeVirtualOrders(1708106879 [1.708e9])
+    │   ├─ emit VirtualOrderExecution(blockTimestamp: 1708106879 [1.708e9], blockTimestampElapsed: 2592000 [2.592e6], newReserve0: 100505041932678114456 [1.005e20], newReserve1: 106983936568102153668 [1.069e20], newTwammReserve0: 1, newTwammReserve1: 1, token0Bought: 0, token1Bought: 0, token0Sold: 0, token1Sold: 0)
+    │   └─ ← [Stop]
+    ├─ [879] FraxswapPair::getTwammState() [staticcall]
+    │   └─ ← [Return] 0, 0, 1708106879 [1.708e9], 3600, 0, 31483919550579051809204422509363267601 [3.148e37]
+    ├─ [3256677] FraxswapPair::executeVirtualOrders(1710698879 [1.71e9])
+    │   ├─ emit VirtualOrderExecution(blockTimestamp: 1710698879 [1.71e9], blockTimestampElapsed: 2592000 [2.592e6], newReserve0: 100505041932678114456 [1.005e20], newReserve1: 106983936568102153668 [1.069e20], newTwammReserve0: 1, newTwammReserve1: 1, token0Bought: 0, token1Bought: 0, token0Sold: 0, token1Sold: 0)
+    │   └─ ← [Stop]
+    ├─ [879] FraxswapPair::getTwammState() [staticcall]
+    │   └─ ← [Return] 0, 0, 1710698879 [1.71e9], 3600, 0, 31483919550579051809204422509363267601 [3.148e37]
+    ├─ [3256677] FraxswapPair::executeVirtualOrders(1713290879 [1.713e9])
+    │   ├─ emit VirtualOrderExecution(blockTimestamp: 1713290879 [1.713e9], blockTimestampElapsed: 2592000 [2.592e6], newReserve0: 100505041932678114456 [1.005e20], newReserve1: 106983936568102153668 [1.069e20], newTwammReserve0: 1, newTwammReserve1: 1, token0Bought: 0, token1Bought: 0, token0Sold: 0, token1Sold: 0)
+    │   └─ ← [Stop]
+    ├─ [879] FraxswapPair::getTwammState() [staticcall]
+    │   └─ ← [Return] 0, 0, 1713290879 [1.713e9], 3600, 0, 31483919550579051809204422509363267601 [3.148e37]
+    ├─ [3256677] FraxswapPair::executeVirtualOrders(1715882879 [1.715e9])
+    │   ├─ emit VirtualOrderExecution(blockTimestamp: 1715882879 [1.715e9], blockTimestampElapsed: 2592000 [2.592e6], newReserve0: 100505041932678114456 [1.005e20], newReserve1: 106983936568102153668 [1.069e20], newTwammReserve0: 1, newTwammReserve1: 1, token0Bought: 0, token1Bought: 0, token0Sold: 0, token1Sold: 0)
+    │   └─ ← [Stop]
+    ├─ [879] FraxswapPair::getTwammState() [staticcall]
+    │   └─ ← [Return] 0, 0, 1715882879 [1.715e9], 3600, 0, 31483919550579051809204422509363267601 [3.148e37]
+    ├─ [3256677] FraxswapPair::executeVirtualOrders(1718474879 [1.718e9])
+    │   ├─ emit VirtualOrderExecution(blockTimestamp: 1718474879 [1.718e9], blockTimestampElapsed: 2592000 [2.592e6], newReserve0: 100505041932678114456 [1.005e20], newReserve1: 106983936568102153668 [1.069e20], newTwammReserve0: 1, newTwammReserve1: 1, token0Bought: 0, token1Bought: 0, token0Sold: 0, token1Sold: 0)
+    │   └─ ← [Stop]
+    ├─ [879] FraxswapPair::getTwammState() [staticcall]
+    │   └─ ← [Return] 0, 0, 1718474879 [1.718e9], 3600, 0, 31483919550579051809204422509363267601 [3.148e37]
+    ├─ [3256677] FraxswapPair::executeVirtualOrders(1721066879 [1.721e9])
+    │   ├─ emit VirtualOrderExecution(blockTimestamp: 1721066879 [1.721e9], blockTimestampElapsed: 2592000 [2.592e6], newReserve0: 100505041932678114456 [1.005e20], newReserve1: 106983936568102153668 [1.069e20], newTwammReserve0: 1, newTwammReserve1: 1, token0Bought: 0, token1Bought: 0, token0Sold: 0, token1Sold: 0)
+    │   └─ ← [Stop]
+    ├─ [879] FraxswapPair::getTwammState() [staticcall]
+    │   └─ ← [Return] 0, 0, 1721066879 [1.721e9], 3600, 0, 31483919550579051809204422509363267601 [3.148e37]
+    ├─ [3256677] FraxswapPair::executeVirtualOrders(1723658879 [1.723e9])
+    │   ├─ emit VirtualOrderExecution(blockTimestamp: 1723658879 [1.723e9], blockTimestampElapsed: 2592000 [2.592e6], newReserve0: 100505041932678114456 [1.005e20], newReserve1: 106983936568102153668 [1.069e20], newTwammReserve0: 1, newTwammReserve1: 1, token0Bought: 0, token1Bought: 0, token0Sold: 0, token1Sold: 0)
+    │   └─ ← [Stop]
+    ├─ [879] FraxswapPair::getTwammState() [staticcall]
+    │   └─ ← [Return] 0, 0, 1723658879 [1.723e9], 3600, 0, 31483919550579051809204422509363267601 [3.148e37]
+    ├─ [3256677] FraxswapPair::executeVirtualOrders(1726250879 [1.726e9])
+    │   ├─ emit VirtualOrderExecution(blockTimestamp: 1726250879 [1.726e9], blockTimestampElapsed: 2592000 [2.592e6], newReserve0: 100505041932678114456 [1.005e20], newReserve1: 106983936568102153668 [1.069e20], newTwammReserve0: 1, newTwammReserve1: 1, token0Bought: 0, token1Bought: 0, token0Sold: 0, token1Sold: 0)
+    │   └─ ← [Stop]
+    ├─ [879] FraxswapPair::getTwammState() [staticcall]
+    │   └─ ← [Return] 0, 0, 1726250879 [1.726e9], 3600, 0, 31483919550579051809204422509363267601 [3.148e37]
+    ├─ [3256677] FraxswapPair::executeVirtualOrders(1728842879 [1.728e9])
+    │   ├─ emit VirtualOrderExecution(blockTimestamp: 1728842879 [1.728e9], blockTimestampElapsed: 2592000 [2.592e6], newReserve0: 100505041932678114456 [1.005e20], newReserve1: 106983936568102153668 [1.069e20], newTwammReserve0: 1, newTwammReserve1: 1, token0Bought: 0, token1Bought: 0, token0Sold: 0, token1Sold: 0)
+    │   └─ ← [Stop]
+    ├─ [879] FraxswapPair::getTwammState() [staticcall]
+    │   └─ ← [Return] 0, 0, 1728842879 [1.728e9], 3600, 0, 31483919550579051809204422509363267601 [3.148e37]
+    ├─ [3256677] FraxswapPair::executeVirtualOrders(1731434879 [1.731e9])
+    │   ├─ emit VirtualOrderExecution(blockTimestamp: 1731434879 [1.731e9], blockTimestampElapsed: 2592000 [2.592e6], newReserve0: 100505041932678114456 [1.005e20], newReserve1: 106983936568102153668 [1.069e20], newTwammReserve0: 1, newTwammReserve1: 1, token0Bought: 0, token1Bought: 0, token0Sold: 0, token1Sold: 0)
+    │   └─ ← [Stop]
+    ├─ [879] FraxswapPair::getTwammState() [staticcall]
+    │   └─ ← [Return] 0, 0, 1731434879 [1.731e9], 3600, 0, 31483919550579051809204422509363267601 [3.148e37]
+    ├─ [3256677] FraxswapPair::executeVirtualOrders(1734026879 [1.734e9])
+    │   ├─ emit VirtualOrderExecution(blockTimestamp: 1734026879 [1.734e9], blockTimestampElapsed: 2592000 [2.592e6], newReserve0: 100505041932678114456 [1.005e20], newReserve1: 106983936568102153668 [1.069e20], newTwammReserve0: 1, newTwammReserve1: 1, token0Bought: 0, token1Bought: 0, token0Sold: 0, token1Sold: 0)
+    │   └─ ← [Stop]
+    ├─ [879] FraxswapPair::getTwammState() [staticcall]
+    │   └─ ← [Return] 0, 0, 1734026879 [1.734e9], 3600, 0, 31483919550579051809204422509363267601 [3.148e37]
+    ├─ [3256677] FraxswapPair::executeVirtualOrders(1736618879 [1.736e9])
+    │   ├─ emit VirtualOrderExecution(blockTimestamp: 1736618879 [1.736e9], blockTimestampElapsed: 2592000 [2.592e6], newReserve0: 100505041932678114456 [1.005e20], newReserve1: 106983936568102153668 [1.069e20], newTwammReserve0: 1, newTwammReserve1: 1, token0Bought: 0, token1Bought: 0, token0Sold: 0, token1Sold: 0)
+    │   └─ ← [Stop]
+    ├─ [879] FraxswapPair::getTwammState() [staticcall]
+    │   └─ ← [Return] 0, 0, 1736618879 [1.736e9], 3600, 0, 31483919550579051809204422509363267601 [3.148e37]
+    ├─ [3256677] FraxswapPair::executeVirtualOrders(1739210879 [1.739e9])
+    │   ├─ emit VirtualOrderExecution(blockTimestamp: 1739210879 [1.739e9], blockTimestampElapsed: 2592000 [2.592e6], newReserve0: 100505041932678114456 [1.005e20], newReserve1: 106983936568102153668 [1.069e20], newTwammReserve0: 1, newTwammReserve1: 1, token0Bought: 0, token1Bought: 0, token0Sold: 0, token1Sold: 0)
+    │   └─ ← [Stop]
+    ├─ [879] FraxswapPair::getTwammState() [staticcall]
+    │   └─ ← [Return] 0, 0, 1739210879 [1.739e9], 3600, 0, 31483919550579051809204422509363267601 [3.148e37]
+    ├─ [3256677] FraxswapPair::executeVirtualOrders(1741802879 [1.741e9])
+    │   ├─ emit VirtualOrderExecution(blockTimestamp: 1741802879 [1.741e9], blockTimestampElapsed: 2592000 [2.592e6], newReserve0: 100505041932678114456 [1.005e20], newReserve1: 106983936568102153668 [1.069e20], newTwammReserve0: 1, newTwammReserve1: 1, token0Bought: 0, token1Bought: 0, token0Sold: 0, token1Sold: 0)
+    │   └─ ← [Stop]
+    ├─ [879] FraxswapPair::getTwammState() [staticcall]
+    │   └─ ← [Return] 0, 0, 1741802879 [1.741e9], 3600, 0, 31483919550579051809204422509363267601 [3.148e37]
+    ├─ [3256677] FraxswapPair::executeVirtualOrders(1744394879 [1.744e9])
+    │   ├─ emit VirtualOrderExecution(blockTimestamp: 1744394879 [1.744e9], blockTimestampElapsed: 2592000 [2.592e6], newReserve0: 100505041932678114456 [1.005e20], newReserve1: 106983936568102153668 [1.069e20], newTwammReserve0: 1, newTwammReserve1: 1, token0Bought: 0, token1Bought: 0, token0Sold: 0, token1Sold: 0)
+    │   └─ ← [Stop]
+    ├─ [879] FraxswapPair::getTwammState() [staticcall]
+    │   └─ ← [Return] 0, 0, 1744394879 [1.744e9], 3600, 0, 31483919550579051809204422509363267601 [3.148e37]
+    ├─ [3256677] FraxswapPair::executeVirtualOrders(1746986879 [1.746e9])
+    │   ├─ emit VirtualOrderExecution(blockTimestamp: 1746986879 [1.746e9], blockTimestampElapsed: 2592000 [2.592e6], newReserve0: 100505041932678114456 [1.005e20], newReserve1: 106983936568102153668 [1.069e20], newTwammReserve0: 1, newTwammReserve1: 1, token0Bought: 0, token1Bought: 0, token0Sold: 0, token1Sold: 0)
+    │   └─ ← [Stop]
+    ├─ [879] FraxswapPair::getTwammState() [staticcall]
+    │   └─ ← [Return] 0, 0, 1746986879 [1.746e9], 3600, 0, 31483919550579051809204422509363267601 [3.148e37]
+    ├─ [3256677] FraxswapPair::executeVirtualOrders(1749578879 [1.749e9])
+    │   ├─ emit VirtualOrderExecution(blockTimestamp: 1749578879 [1.749e9], blockTimestampElapsed: 2592000 [2.592e6], newReserve0: 100505041932678114456 [1.005e20], newReserve1: 106983936568102153668 [1.069e20], newTwammReserve0: 1, newTwammReserve1: 1, token0Bought: 0, token1Bought: 0, token0Sold: 0, token1Sold: 0)
+    │   └─ ← [Stop]
+    ├─ [879] FraxswapPair::getTwammState() [staticcall]
+    │   └─ ← [Return] 0, 0, 1749578879 [1.749e9], 3600, 0, 31483919550579051809204422509363267601 [3.148e37]
+    ├─ [3256677] FraxswapPair::executeVirtualOrders(1752170879 [1.752e9])
+    │   ├─ emit VirtualOrderExecution(blockTimestamp: 1752170879 [1.752e9], blockTimestampElapsed: 2592000 [2.592e6], newReserve0: 100505041932678114456 [1.005e20], newReserve1: 106983936568102153668 [1.069e20], newTwammReserve0: 1, newTwammReserve1: 1, token0Bought: 0, token1Bought: 0, token0Sold: 0, token1Sold: 0)
+    │   └─ ← [Stop]
+    ├─ [879] FraxswapPair::getTwammState() [staticcall]
+    │   └─ ← [Return] 0, 0, 1752170879 [1.752e9], 3600, 0, 31483919550579051809204422509363267601 [3.148e37]
+    ├─ [3256677] FraxswapPair::executeVirtualOrders(1754762879 [1.754e9])
+    │   ├─ emit VirtualOrderExecution(blockTimestamp: 1754762879 [1.754e9], blockTimestampElapsed: 2592000 [2.592e6], newReserve0: 100505041932678114456 [1.005e20], newReserve1: 106983936568102153668 [1.069e20], newTwammReserve0: 1, newTwammReserve1: 1, token0Bought: 0, token1Bought: 0, token0Sold: 0, token1Sold: 0)
+    │   └─ ← [Stop]
+    ├─ [879] FraxswapPair::getTwammState() [staticcall]
+    │   └─ ← [Return] 0, 0, 1754762879 [1.754e9], 3600, 0, 31483919550579051809204422509363267601 [3.148e37]
+    ├─ [3256677] FraxswapPair::executeVirtualOrders(1757354879 [1.757e9])
+    │   ├─ emit VirtualOrderExecution(blockTimestamp: 1757354879 [1.757e9], blockTimestampElapsed: 2592000 [2.592e6], newReserve0: 100505041932678114456 [1.005e20], newReserve1: 106983936568102153668 [1.069e20], newTwammReserve0: 1, newTwammReserve1: 1, token0Bought: 0, token1Bought: 0, token0Sold: 0, token1Sold: 0)
+    │   └─ ← [Stop]
+    ├─ [879] FraxswapPair::getTwammState() [staticcall]
+    │   └─ ← [Return] 0, 0, 1757354879 [1.757e9], 3600, 0, 31483919550579051809204422509363267601 [3.148e37]
+    ├─ [3256677] FraxswapPair::executeVirtualOrders(1759946879 [1.759e9])
+    │   ├─ emit VirtualOrderExecution(blockTimestamp: 1759946879 [1.759e9], blockTimestampElapsed: 2592000 [2.592e6], newReserve0: 100505041932678114456 [1.005e20], newReserve1: 106983936568102153668 [1.069e20], newTwammReserve0: 1, newTwammReserve1: 1, token0Bought: 0, token1Bought: 0, token0Sold: 0, token1Sold: 0)
+    │   └─ ← [Stop]
+    ├─ [879] FraxswapPair::getTwammState() [staticcall]
+    │   └─ ← [Return] 0, 0, 1759946879 [1.759e9], 3600, 0, 31483919550579051809204422509363267601 [3.148e37]
+    ├─ [3256677] FraxswapPair::executeVirtualOrders(1762538879 [1.762e9])
+    │   ├─ emit VirtualOrderExecution(blockTimestamp: 1762538879 [1.762e9], blockTimestampElapsed: 2592000 [2.592e6], newReserve0: 100505041932678114456 [1.005e20], newReserve1: 106983936568102153668 [1.069e20], newTwammReserve0: 1, newTwammReserve1: 1, token0Bought: 0, token1Bought: 0, token0Sold: 0, token1Sold: 0)
+    │   └─ ← [Stop]
+    ├─ [879] FraxswapPair::getTwammState() [staticcall]
+    │   └─ ← [Return] 0, 0, 1762538879 [1.762e9], 3600, 0, 31483919550579051809204422509363267601 [3.148e37]
+    ├─ [3256677] FraxswapPair::executeVirtualOrders(1765130879 [1.765e9])
+    │   ├─ emit VirtualOrderExecution(blockTimestamp: 1765130879 [1.765e9], blockTimestampElapsed: 2592000 [2.592e6], newReserve0: 100505041932678114456 [1.005e20], newReserve1: 106983936568102153668 [1.069e20], newTwammReserve0: 1, newTwammReserve1: 1, token0Bought: 0, token1Bought: 0, token0Sold: 0, token1Sold: 0)
+    │   └─ ← [Stop]
+    ├─ [879] FraxswapPair::getTwammState() [staticcall]
+    │   └─ ← [Return] 0, 0, 1765130879 [1.765e9], 3600, 0, 31483919550579051809204422509363267601 [3.148e37]
+    ├─ [3256677] FraxswapPair::executeVirtualOrders(1767722879 [1.767e9])
+    │   ├─ emit VirtualOrderExecution(blockTimestamp: 1767722879 [1.767e9], blockTimestampElapsed: 2592000 [2.592e6], newReserve0: 100505041932678114456 [1.005e20], newReserve1: 106983936568102153668 [1.069e20], newTwammReserve0: 1, newTwammReserve1: 1, token0Bought: 0, token1Bought: 0, token0Sold: 0, token1Sold: 0)
+    │   └─ ← [Stop]
+    ├─ [879] FraxswapPair::getTwammState() [staticcall]
+    │   └─ ← [Return] 0, 0, 1767722879 [1.767e9], 3600, 0, 31483919550579051809204422509363267601 [3.148e37]
+    ├─ [3256677] FraxswapPair::executeVirtualOrders(1770314879 [1.77e9])
+    │   ├─ emit VirtualOrderExecution(blockTimestamp: 1770314879 [1.77e9], blockTimestampElapsed: 2592000 [2.592e6], newReserve0: 100505041932678114456 [1.005e20], newReserve1: 106983936568102153668 [1.069e20], newTwammReserve0: 1, newTwammReserve1: 1, token0Bought: 0, token1Bought: 0, token0Sold: 0, token1Sold: 0)
+    │   └─ ← [Stop]
+    ├─ [879] FraxswapPair::getTwammState() [staticcall]
+    │   └─ ← [Return] 0, 0, 1770314879 [1.77e9], 3600, 0, 31483919550579051809204422509363267601 [3.148e37]
+    ├─ [3256677] FraxswapPair::executeVirtualOrders(1772906879 [1.772e9])
+    │   ├─ emit VirtualOrderExecution(blockTimestamp: 1772906879 [1.772e9], blockTimestampElapsed: 2592000 [2.592e6], newReserve0: 100505041932678114456 [1.005e20], newReserve1: 106983936568102153668 [1.069e20], newTwammReserve0: 1, newTwammReserve1: 1, token0Bought: 0, token1Bought: 0, token0Sold: 0, token1Sold: 0)
+    │   └─ ← [Stop]
+    ├─ [879] FraxswapPair::getTwammState() [staticcall]
+    │   └─ ← [Return] 0, 0, 1772906879 [1.772e9], 3600, 0, 31483919550579051809204422509363267601 [3.148e37]
+    ├─ [3256677] FraxswapPair::executeVirtualOrders(1775498879 [1.775e9])
+    │   ├─ emit VirtualOrderExecution(blockTimestamp: 1775498879 [1.775e9], blockTimestampElapsed: 2592000 [2.592e6], newReserve0: 100505041932678114456 [1.005e20], newReserve1: 106983936568102153668 [1.069e20], newTwammReserve0: 1, newTwammReserve1: 1, token0Bought: 0, token1Bought: 0, token0Sold: 0, token1Sold: 0)
+    │   └─ ← [Stop]
+    ├─ [879] FraxswapPair::getTwammState() [staticcall]
+    │   └─ ← [Return] 0, 0, 1775498879 [1.775e9], 3600, 0, 31483919550579051809204422509363267601 [3.148e37]
+    ├─ [3256677] FraxswapPair::executeVirtualOrders(1778090879 [1.778e9])
+    │   ├─ emit VirtualOrderExecution(blockTimestamp: 1778090879 [1.778e9], blockTimestampElapsed: 2592000 [2.592e6], newReserve0: 100505041932678114456 [1.005e20], newReserve1: 106983936568102153668 [1.069e20], newTwammReserve0: 1, newTwammReserve1: 1, token0Bought: 0, token1Bought: 0, token0Sold: 0, token1Sold: 0)
+    │   └─ ← [Stop]
+    ├─ [879] FraxswapPair::getTwammState() [staticcall]
+    │   └─ ← [Return] 0, 0, 1778090879 [1.778e9], 3600, 0, 31483919550579051809204422509363267601 [3.148e37]
+    ├─ [3225128] FraxswapPair::executeVirtualOrders(1780659323 [1.78e9])
+    │   ├─ emit VirtualOrderExecution(blockTimestamp: 1780659323 [1.78e9], blockTimestampElapsed: 2568444 [2.568e6], newReserve0: 100505041932678114456 [1.005e20], newReserve1: 106983936568102153668 [1.069e20], newTwammReserve0: 1, newTwammReserve1: 1, token0Bought: 0, token1Bought: 0, token0Sold: 0, token1Sold: 0)
+    │   └─ ← [Stop]
+    ├─ [879] FraxswapPair::getTwammState() [staticcall]
+    │   └─ ← [Return] 0, 0, 1780659323 [1.78e9], 3600, 0, 31483919550579051809204422509363267601 [3.148e37]
+    ├─ emit log_named_uint(key: "recovery call", val: 39)
+    ├─ emit log_named_uint(key: "target", val: 1780659323 [1.78e9])
+    ├─ emit log_named_uint(key: "gas used", val: 3225570 [3.225e6])
+    ├─ emit log_named_uint(key: "new last", val: 1780659323 [1.78e9])
+    ├─ emit log_named_uint(key: "total recovery calls", val: 39)
+    ├─ emit log_named_uint(key: "total recovery gas", val: 127008821 [1.27e8])
+    ├─ [102166] FraxswapPair::sync()
+    │   ├─ [2605] FPI::balanceOf(FraxswapPair: [0xd79886841026a39cFF99321140B3c4D31314782B]) [staticcall]
+    │   │   └─ ← [Return] 100505041932678114457 [1.005e20]
+    │   ├─ [2666] FRAXStablecoin::balanceOf(FraxswapPair: [0xd79886841026a39cFF99321140B3c4D31314782B]) [staticcall]
+    │   │   └─ ← [Return] 106983936568102153669 [1.069e20]
+    │   ├─ emit Sync(reserve0: 100505041932678114456 [1.005e20], reserve1: 106983936568102153668 [1.069e20])
+    │   └─ ← [Stop]
+    ├─ emit log_named_uint(key: "sync after chunked recovery ok", val: 1)
+    └─ ← [Stop]
+
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 3764.34s (4654.70s CPU time)
+
+Ran 1 test suite in 3766.13s (3764.34s CPU time): 2 tests passed, 0 failed, 0 skipped (2 total tests)
