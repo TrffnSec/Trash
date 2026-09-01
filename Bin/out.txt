@@ -158,5 +158,5 @@ total 8924
 drwxr-x--- 2 ubuntu ubuntu      43 Sep  1 19:54 .
 drwxr-xr-x 3 root   root        19 Aug 30 11:05 ..
 srw------- 1 ubuntu ubuntu       0 Sep  1 19:50 init.sock
--rwxr-xr-x 1 root   root   9134264 Sep  1 19:49 sandbox-init
+-rwxr-xr-x 1 root   root   9134264 Sep  1 19:49 sandbox-init 
                     
